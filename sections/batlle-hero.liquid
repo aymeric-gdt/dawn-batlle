@@ -9,8 +9,8 @@
   }
 
   .batlle-hero__grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
     align-items: center;
     padding-top: 0;
@@ -20,13 +20,20 @@
 
   @media screen and (min-width: 990px) {
     .batlle-hero__grid {
-      grid-template-columns: 5fr 7fr;
+      flex-wrap: nowrap;
+      justify-content: space-between;
       gap: 5rem;
     }
   }
 
   .batlle-hero__content {
+    flex: 0 0 auto;
+    max-width: 50%;
     position: relative;
+  }
+
+  .batlle-hero__visual {
+    flex: 0 0 auto;
   }
 
   .batlle-hero__supertitle {
