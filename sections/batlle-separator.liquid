@@ -31,8 +31,8 @@
 
 <div class="batlle-separator color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="page-width">
-    <hr class="batlle-separator__line" aria-hidden="true">
-    {%- if section.settings.text != blank -%}
+    <div class="batlle-separator__line" aria-hidden="true"></div>
+    {%- if section.settings.text != blank and section.settings.text != '·' -%}
       <p class="batlle-separator__text">{{ section.settings.text }}</p>
     {%- endif -%}
   </div>
@@ -51,7 +51,7 @@
       "type": "text",
       "id": "text",
       "default": "·",
-      "label": "Texte (optionnel)"
+      "label": "Texte (optionnel, effacer le point pour désactiver)"
     },
     {
       "type": "range",
