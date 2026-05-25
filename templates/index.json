@@ -101,24 +101,9 @@
         "footer_cta_link": "#batlle-contact",
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 28,
-        "padding_top_mobile": 8,
-        "padding_bottom_mobile": 36
-      }
-    },
-    "batlle_separator_nGnWa7": {
-      "type": "batlle-separator",
-      "name": "Séparateur BATLLE",
-      "settings": {
-        "text": "·",
-        "line_width": 1,
-        "line_length": 100,
-        "line_opacity": 100,
-        "color_scheme": "",
-        "padding_top": 0,
         "padding_bottom": 0,
-        "padding_top_mobile": 36,
-        "padding_bottom_mobile": 36
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 0
       }
     },
     "eshop_collection": {
@@ -361,7 +346,6 @@
     "video_9UiyTi",
     "hero",
     "batlle_collection",
-    "batlle_separator_nGnWa7",
     "eshop_collection",
     "savoir_faire",
     "collection_list_wLNpCQ",
