@@ -12,10 +12,13 @@
   }
 
   .batlle-separator__line {
-    border: none;
+    border: 0;
     border-top: {{ section.settings.line_width }}px solid rgba(var(--color-foreground), 0.15);
     width: {{ section.settings.line_length }}%;
     margin: 0 auto;
+    padding: 0;
+    height: 0;
+    display: block;
   }
 
   .batlle-separator__text {
@@ -31,7 +34,7 @@
 
 <div class="batlle-separator color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="page-width">
-    <div class="batlle-separator__line" aria-hidden="true"></div>
+    <hr class="batlle-separator__line" aria-hidden="true">
     {%- if section.settings.text != blank and section.settings.text != '·' -%}
       <p class="batlle-separator__text">{{ section.settings.text }}</p>
     {%- endif -%}
