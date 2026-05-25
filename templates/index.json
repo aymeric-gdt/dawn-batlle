@@ -262,6 +262,7 @@
     },
     "biography": {
       "type": "batlle-biography",
+      "disabled": true,
       "settings": {
         "portrait": "shopify://shop_images/Firefly.jpg",
         "name_badge": "Louise",
