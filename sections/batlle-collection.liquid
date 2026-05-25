@@ -245,6 +245,19 @@
     transform: translateX(3px);
   }
 
+  .batlle-collection__footer-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 3rem 0 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .batlle-collection__footer-separator {
+      margin-top: 2rem;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .batlle-collection__header {
       margin-bottom: 3rem;
@@ -406,6 +419,7 @@
           </a>
         {%- endif -%}
       </div>
+      <hr class="batlle-collection__footer-separator" aria-hidden="true">
     {%- endif -%}
   </div>
 </div>
