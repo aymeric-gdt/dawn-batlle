@@ -27,8 +27,6 @@
     flex-wrap: wrap;
     gap: 4.5rem;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 3rem;
     width: 100%;
   }
 
@@ -337,8 +335,8 @@
   }
 </style>
 
-<div class="batlle-hero color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="page-width batlle-hero__grid">
+<div class="batlle-hero color-{{ section.settings.color_scheme }} gradient{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width batlle-hero__grid section-{{ section.id }}-padding">
     <div class="batlle-hero__content">
       {%- if section.settings.supertitle != blank -%}
         <p class="batlle-hero__supertitle">{{ section.settings.supertitle }}</p>
