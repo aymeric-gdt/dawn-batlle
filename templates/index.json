@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -7,10 +16,10 @@
         "title": "BATLLE",
         "subtitle": "l'armure d'une femme.",
         "description": "<p>Pièces sur-mesure inspirées des chevaleresses, des sorcières et des figures puissantes de l'histoire. Confection main à Paris.</p>",
-        "hero_image": "",
+        "hero_image": "shopify://shop_images/1L8A9967.jpg",
         "overlay_piece_number": "Pièce N° 01",
         "overlay_piece_title": "L'Armure de Jeanne",
-        "overlay_piece_materials": "Cuir, métal, soie noire",
+        "overlay_piece_materials": "Cuir, Tissus, Metal",
         "cta_1_label": "Voir la collection",
         "cta_1_link": "#batlle-collection",
         "cta_2_label": "Découvrir l'e-shop",
@@ -24,7 +33,7 @@
         "project1": {
           "type": "project",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/81809520-38C1-4B25-A979-B9447E083FE2.jpg",
             "figure_tag": "Fig. 01",
             "category": "Flou",
             "title": "Robe bénitier",
@@ -35,7 +44,7 @@
         "project2": {
           "type": "project",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/IMG_6026.jpg",
             "figure_tag": "Fig. 02",
             "category": "Flou",
             "title": "Chemise Brunehaut",
@@ -46,7 +55,7 @@
         "project3": {
           "type": "project",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/5C6485E2-67E1-423A-84C4-1C175E7E75F1.jpg",
             "figure_tag": "Fig. 03",
             "category": "Tailleur",
             "title": "Tailleur Hildegarde",
@@ -73,17 +82,27 @@
     "eshop_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "E-Shop",
-        "heading_size": "h1",
         "collection": "",
         "products_to_show": 8,
+        "title": "E-Shop",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
+        "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -135,11 +154,11 @@
         "supertitle": "Le geste · L'atelier",
         "title": "<p>Modéliste <em>avant tout.</em></p>",
         "intro": "<p>Formée à l'Institut Français de la Mode et à l'AICP, je travaille le vêtement comme une sculpture vivante. Le moulage, le drapé et la coupe sont au cœur de chaque création.</p>",
-        "process_image": "",
+        "process_image": "shopify://shop_images/IMG_6396.jpg",
         "moulage_supertitle": "Processus créatif · Moulage",
         "moulage_title": "<p>Le moulage, <em>la pensée du tissu.</em></p>",
         "moulage_body": "<p>Chaque création commence sur le mannequin. Je travaille la toile brute en la sculptant directement, jusqu'à ce que la forme raconte quelque chose.</p><p>Cette technique ancestrale, héritée de la haute couture parisienne, permet une liberté totale : la pièce naît du geste, non du dessin.</p>",
-        "moulage_image": "",
+        "moulage_image": "shopify://shop_images/IMG_6022.jpg",
         "mat_1_label": "Flou",
         "mat_1_value": "Soie · Mousseline",
         "mat_2_label": "Tailleur",
@@ -151,7 +170,7 @@
     "biography": {
       "type": "batlle-biography",
       "settings": {
-        "portrait": "",
+        "portrait": "shopify://shop_images/PXL_20260425_100907146.jpg",
         "name_badge": "Louise",
         "supertitle": "La créatrice · Parcours",
         "title": "<p>Louise, <em>violoniste</em> et couturière.</p>",
@@ -171,7 +190,6 @@
         "press1": {
           "type": "press_cover",
           "settings": {
-            "image": "",
             "publication": "L'Officiel",
             "date": "Juin 2024",
             "link": ""
@@ -180,7 +198,6 @@
         "press2": {
           "type": "press_cover",
           "settings": {
-            "image": "",
             "publication": "Vogue Paris",
             "date": "Mars 2024",
             "link": ""
@@ -189,7 +206,6 @@
         "press3": {
           "type": "press_cover",
           "settings": {
-            "image": "",
             "publication": "Numéro",
             "date": "Octobre 2023",
             "link": ""
@@ -198,7 +214,6 @@
         "press4": {
           "type": "press_cover",
           "settings": {
-            "image": "",
             "publication": "Crash Magazine",
             "date": "Septembre 2024",
             "link": ""
