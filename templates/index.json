@@ -283,6 +283,7 @@
       "blocks": {
         "press1": {
           "type": "press_cover",
+          "disabled": true,
           "settings": {
             "publication": "L'Officiel",
             "date": "Juin 2024",
@@ -291,6 +292,7 @@
         },
         "press2": {
           "type": "press_cover",
+          "disabled": true,
           "settings": {
             "publication": "Vogue Paris",
             "date": "Mars 2024",
