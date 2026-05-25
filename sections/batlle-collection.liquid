@@ -246,12 +246,75 @@
   }
 
   @media screen and (max-width: 749px) {
+    .batlle-collection__header {
+      margin-bottom: 3rem;
+      gap: 1.5rem;
+    }
+
+    .batlle-collection__supertitle {
+      font-size: 0.95rem;
+    }
+
+    .batlle-collection__title {
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+    }
+
+    .batlle-collection__quote {
+      font-size: 1.3rem;
+      max-width: 100%;
+    }
+
     .batlle-collection__grid {
-      gap: 3rem;
+      gap: 2.5rem;
+    }
+
+    .batlle-project__title {
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+    }
+
+    .batlle-project__description {
+      font-size: 1.3rem;
     }
 
     .batlle-project__arrow {
       display: none;
+    }
+
+    .batlle-collection__footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      gap: 1.5rem;
+    }
+
+    .batlle-collection__footer-text {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+    }
+
+    .batlle-collection__footer-cta {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .batlle-collection__header {
+      margin-bottom: 4rem;
+    }
+
+    .batlle-collection__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 2rem;
+    }
+
+    .batlle-project:nth-child(1),
+    .batlle-project:nth-child(2),
+    .batlle-project:nth-child(3) {
+      grid-column: span 1;
+      margin-top: 0;
+    }
+
+    .batlle-project__title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
     }
   }
 </style>
