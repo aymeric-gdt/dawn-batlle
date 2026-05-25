@@ -1,210 +1,246 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "batlle-hero",
+      "settings": {
+        "supertitle": "Maison Batlle · Paris · Édition 01",
+        "title": "BATLLE",
+        "subtitle": "l'armure d'une femme.",
+        "description": "<p>Pièces sur-mesure inspirées des chevaleresses, des sorcières et des figures puissantes de l'histoire. Confection main à Paris.</p>",
+        "hero_image": "",
+        "overlay_piece_number": "Pièce N° 01",
+        "overlay_piece_title": "L'Armure de Jeanne",
+        "overlay_piece_materials": "Cuir, métal, soie noire",
+        "cta_1_label": "Voir la collection",
+        "cta_1_link": "#batlle-collection",
+        "cta_2_label": "Découvrir l'e-shop",
+        "cta_2_link": "#batlle-eshop",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "batlle_collection": {
+      "type": "batlle-collection",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "project1": {
+          "type": "project",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "",
+            "figure_tag": "Fig. 01",
+            "category": "Flou",
+            "title": "Robe bénitier",
+            "description": "<p>Robe longue et élégante à double col bénitier — à l'avant comme au dos. Réalisation sur-mesure.</p>",
+            "link": ""
           }
         },
-        "text": {
-          "type": "text",
+        "project2": {
+          "type": "project",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "image": "",
+            "figure_tag": "Fig. 02",
+            "category": "Flou",
+            "title": "Chemise Brunehaut",
+            "description": "<p>Chemise oversize à manches gigot architecturées. Coton de chemiserie italien. Popeline de coton.</p>",
+            "link": ""
           }
         },
-        "button": {
-          "type": "buttons",
+        "project3": {
+          "type": "project",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "",
+            "figure_tag": "Fig. 03",
+            "category": "Tailleur",
+            "title": "Tailleur Hildegarde",
+            "description": "<p>Ensemble gilet long et pantalon ajusté. Allure dandy contemporaine. Laine froide noire.</p>",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "project1",
+        "project2",
+        "project3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "supertitle": "La collection · Figures",
+        "title": "Chaque femme mérite <em>son armure.</em>",
+        "quote": "Six identités, un même geste : sculpter le tissu pour révéler la puissance de celle qui le porte.",
+        "footer_text": "<p>Une silhouette vous parle&nbsp;? <em>Imaginons la vôtre.</em></p>",
+        "footer_cta_label": "Demander une pièce sur-mesure",
+        "footer_cta_link": "#batlle-contact",
+        "color_scheme": "scheme-1"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
+    "eshop_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
+        "title": "E-Shop",
+        "heading_size": "h1",
+        "collection": "",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
+        "image_ratio": "portrait",
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "enable_quick_add": false,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "collage": {
-      "type": "collage",
+    "savoir_faire": {
+      "type": "batlle-savoir-faire",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "step1": {
+          "type": "step",
           "settings": {
-            "collection": ""
+            "number": "01",
+            "title": "Croquis",
+            "body": "<p>L'idée naît à l'encre, sur papier kraft. Une silhouette se dessine, un détail s'invente — souvent puisé dans une figure historique ou mythologique.</p>"
           }
         },
-        "product": {
-          "type": "product",
+        "step2": {
+          "type": "step",
           "settings": {
-            "product": "",
-            "second_image": false
+            "number": "02",
+            "title": "Patronage",
+            "body": "<p>Construction des bases en toile, ajustées à la forme. Chaque ligne calculée, chaque courbe pensée comme une architecture du corps.</p>"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "step3": {
+          "type": "step",
           "settings": {
-            "collection": ""
+            "number": "03",
+            "title": "Drapé",
+            "body": "<p>Le tissu se sculpte directement sur le mannequin. La main décide, la matière obéit. C'est là que naît la pièce vivante.</p>"
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Confection main · Paris",
+            "body": "<p>Chaque pièce est entièrement assemblée à la main dans mon atelier parisien. Coutures invisibles, finitions au point d'esprit, baleinage spiralé pour les corsets.</p>"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "step1",
+        "step2",
+        "step3",
+        "step4"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "supertitle": "Le geste · L'atelier",
+        "title": "<p>Modéliste <em>avant tout.</em></p>",
+        "intro": "<p>Formée à l'Institut Français de la Mode et à l'AICP, je travaille le vêtement comme une sculpture vivante. Le moulage, le drapé et la coupe sont au cœur de chaque création.</p>",
+        "process_image": "",
+        "moulage_supertitle": "Processus créatif · Moulage",
+        "moulage_title": "<p>Le moulage, <em>la pensée du tissu.</em></p>",
+        "moulage_body": "<p>Chaque création commence sur le mannequin. Je travaille la toile brute en la sculptant directement, jusqu'à ce que la forme raconte quelque chose.</p><p>Cette technique ancestrale, héritée de la haute couture parisienne, permet une liberté totale : la pièce naît du geste, non du dessin.</p>",
+        "moulage_image": "",
+        "mat_1_label": "Flou",
+        "mat_1_value": "Soie · Mousseline",
+        "mat_2_label": "Tailleur",
+        "mat_2_value": "Laine · Coton",
+        "mat_3_label": "Corseterie",
+        "mat_3_value": "Baleinage main"
       }
     },
-    "video": {
-      "type": "video",
+    "biography": {
+      "type": "batlle-biography",
       "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
+        "portrait": "",
+        "name_badge": "Louise",
+        "supertitle": "La créatrice · Parcours",
+        "title": "<p>Louise, <em>violoniste</em> et couturière.</p>",
+        "body": "<p>Née à Toulouse, je grandis entre les cordes du violon et les chutes de tissu. Très tôt, la musique et la couture me semblent répondre à la même exigence : la précision du geste au service de l'émotion.</p><p>Je me forme à l'<strong>Institut Français de la Mode</strong> puis à l'<strong>AICP</strong> — deux écoles réputées pour leur technicité et leur approche radicale de la coupe. J'y apprends le flou, le tailleur et le corset, les trois langues de la couture.</p><p>Avec Batlle, je réinterprète les histoires anciennes — chevaleresses, sorcières, mystiques, héroïnes oubliées — pour habiller les femmes d'aujourd'hui.</p>",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "skill_1_label": "Flou",
+        "skill_1_value": "Drapé",
+        "skill_2_label": "Tailleur",
+        "skill_2_value": "Coupe · Structure",
+        "skill_3_label": "Corset",
+        "skill_3_value": "Architecture du corps"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "presse": {
+      "type": "batlle-presse",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "press1": {
+          "type": "press_cover",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "image": "",
+            "publication": "L'Officiel",
+            "date": "Juin 2024",
             "link": ""
           }
         },
-        "column2": {
-          "type": "column",
+        "press2": {
+          "type": "press_cover",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "image": "",
+            "publication": "Vogue Paris",
+            "date": "Mars 2024",
             "link": ""
           }
         },
-        "column3": {
-          "type": "column",
+        "press3": {
+          "type": "press_cover",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "image": "",
+            "publication": "Numéro",
+            "date": "Octobre 2023",
+            "link": ""
+          }
+        },
+        "press4": {
+          "type": "press_cover",
+          "settings": {
+            "image": "",
+            "publication": "Crash Magazine",
+            "date": "Septembre 2024",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "press1",
+        "press2",
+        "press3",
+        "press4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "supertitle": "Presse · Editorial",
+        "title": "<p>Vu <em>en presse</em>.</p>",
+        "quote": "Une jeune maison qui réécrit le vocabulaire de la couture.",
+        "color_scheme": "scheme-3",
+        "featured_publication": "L'Officiel",
+        "featured_date": "Juin 2024",
+        "featured_title": "Portrait : Louise, la couture comme partition",
+        "featured_excerpt": "Entre violon et atelier, le parcours singulier d'une créatrice à suivre.",
+        "featured_link": ""
+      }
+    },
+    "contact": {
+      "type": "batlle-contact",
+      "settings": {
+        "supertitle": "Prendre rendez-vous",
+        "title": "<p>Une pièce <em>unique</em> commence par <em>une rencontre.</em></p>",
+        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi — chaque projet commence par une conversation.</p>",
+        "email": "contact@batlle.fr",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero",
+    "batlle_collection",
+    "eshop_collection",
+    "savoir_faire",
+    "biography",
+    "presse",
+    "contact"
   ]
 }

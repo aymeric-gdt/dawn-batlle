@@ -267,6 +267,80 @@
     }
   },
   "sections": {
+    "batlle-collection": {
+      "name": "Collection",
+      "settings": {
+        "intro_text": { "label": "Introduction text" }
+      },
+      "blocks": {
+        "project": {
+          "name": "Project",
+          "settings": {
+            "image": { "label": "Image" },
+            "title": { "label": "Title" },
+            "description": { "label": "Description" }
+          }
+        }
+      },
+      "presets": { "name": "Collection" }
+    },
+    "batlle-savoir-faire": {
+      "name": "Savoir-Faire & Moulage",
+      "settings": {
+        "image": { "label": "Image" },
+        "title": { "label": "Title" },
+        "body": { "label": "Text" },
+        "layout": {
+          "label": "Layout",
+          "options__1": { "label": "Image left" },
+          "options__2": { "label": "Image right" }
+        }
+      },
+      "presets": { "name": "Savoir-Faire & Moulage" }
+    },
+    "batlle-biography": {
+      "name": "Biography — Louise",
+      "settings": {
+        "portrait": { "label": "Portrait" },
+        "title": { "label": "Name" },
+        "body": { "label": "Biography" },
+        "skill_1": { "label": "Skill 1" },
+        "skill_2": { "label": "Skill 2" },
+        "skill_3": { "label": "Skill 3" }
+      },
+      "presets": { "name": "Biography — Louise" }
+    },
+    "batlle-presse": {
+      "name": "Press",
+      "read_article": "Read article",
+      "settings": {
+        "title": { "label": "Title" }
+      },
+      "blocks": {
+        "press_item": {
+          "name": "Press article",
+          "settings": {
+            "image": { "label": "Image" },
+            "publication": { "label": "Publication" },
+            "link": { "label": "Link to article" }
+          }
+        }
+      },
+      "presets": { "name": "Press" }
+    },
+    "batlle-contact": {
+      "name": "Contact",
+      "atelier": "Atelier",
+      "atelier_value": "Freelance · Paris\nAppointment only",
+      "contact": "Contact",
+      "settings": {
+        "supertitle": { "label": "Supertitle" },
+        "title": { "label": "Title" },
+        "body": { "label": "Description" },
+        "email": { "label": "Email" }
+      },
+      "presets": { "name": "Contact" }
+    },
     "announcements": {
       "previous_announcement": "Previous announcement",
       "next_announcement": "Next announcement",

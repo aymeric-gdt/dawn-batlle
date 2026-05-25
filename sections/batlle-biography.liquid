@@ -1,0 +1,301 @@
+<style>
+  .batlle-biography {
+    padding: 9rem 0;
+    position: relative;
+  }
+
+  .batlle-biography__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-biography__layout {
+      grid-template-columns: 5fr 7fr;
+      gap: 4rem;
+    }
+
+    .batlle-biography__portrait-col {
+      order: 1;
+    }
+
+    .batlle-biography__content-col {
+      order: 2;
+    }
+  }
+
+  .batlle-biography__portrait-col {
+    position: relative;
+  }
+
+  .batlle-biography__frame {
+    position: relative;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .batlle-biography__frame-border {
+    position: absolute;
+    inset: -1rem;
+    border: 1px solid rgba(var(--color-foreground), 0.4);
+    pointer-events: none;
+  }
+
+  .batlle-biography__frame-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .batlle-biography__frame-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .batlle-biography__name-badge {
+    position: absolute;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    font-style: italic;
+  }
+
+  .batlle-biography__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-biography__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: var(--font-heading-weight);
+    margin: 0 0 2rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-biography__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-biography__body {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+    margin-bottom: 3rem;
+    max-width: 32rem;
+  }
+
+  .batlle-biography__body p {
+    margin: 0 0 1rem;
+  }
+
+  .batlle-biography__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .batlle-biography__skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.15);
+    max-width: 32rem;
+  }
+
+  .batlle-biography__skill-label {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .batlle-biography__skill-value {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    color: rgb(var(--color-foreground));
+  }
+
+  @media screen and (max-width: 749px) {
+    .batlle-biography__skills {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<div class="batlle-biography color-{{ section.settings.color_scheme }} gradient" id="batlle-louise">
+  <div class="page-width">
+    <div class="batlle-biography__layout">
+      <div class="batlle-biography__portrait-col{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="batlle-biography__frame">
+          <div class="batlle-biography__frame-border" aria-hidden="true"></div>
+          <div class="batlle-biography__frame-image">
+            {%- if section.settings.portrait != blank -%}
+              {%- assign img_h = section.settings.portrait.width | divided_by: section.settings.portrait.aspect_ratio -%}
+              {{
+                section.settings.portrait
+                | image_url: width: 600
+                | image_tag:
+                  width: section.settings.portrait.width,
+                  height: img_h,
+                  sizes: '(min-width: 990px) 40vw, 80vw',
+                  widths: '375, 550, 750',
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          {%- if section.settings.name_badge != blank -%}
+            <div class="batlle-biography__name-badge">{{ section.settings.name_badge }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="batlle-biography__content-col{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.supertitle != blank -%}
+          <p class="batlle-biography__supertitle">{{ section.settings.supertitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="batlle-biography__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <div class="batlle-biography__body">
+            {{ section.settings.body }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.skill_1_value != blank or section.settings.skill_2_value != blank or section.settings.skill_3_value != blank -%}
+          <dl class="batlle-biography__skills">
+            {%- if section.settings.skill_1_value != blank -%}
+              <div>
+                <dt class="batlle-biography__skill-label">{{ section.settings.skill_1_label }}</dt>
+                <dd class="batlle-biography__skill-value">{{ section.settings.skill_1_value }}</dd>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.skill_2_value != blank -%}
+              <div>
+                <dt class="batlle-biography__skill-label">{{ section.settings.skill_2_label }}</dt>
+                <dd class="batlle-biography__skill-value">{{ section.settings.skill_2_value }}</dd>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.skill_3_value != blank -%}
+              <div>
+                <dt class="batlle-biography__skill-label">{{ section.settings.skill_3_label }}</dt>
+                <dd class="batlle-biography__skill-value">{{ section.settings.skill_3_value }}</dd>
+              </div>
+            {%- endif -%}
+          </dl>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-biography.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "portrait",
+      "label": "t:sections.batlle-biography.settings.portrait.label"
+    },
+    {
+      "type": "text",
+      "id": "name_badge",
+      "default": "Louise",
+      "label": "t:sections.batlle-biography.settings.name_badge.label"
+    },
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "La créatrice · Parcours",
+      "label": "t:sections.batlle-biography.settings.supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Louise, <em>violoniste</em> et couturière.</p>",
+      "label": "t:sections.batlle-biography.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "default": "<p>Née à Toulouse, je grandis entre les cordes du violon et les chutes de tissu. Très tôt, la musique et la couture me semblent répondre à la même exigence : la précision du geste au service de l'émotion.</p><p>Je me forme à l'<strong>Institut Français de la Mode</strong> puis à l'<strong>AICP</strong> — deux écoles réputées pour leur technicité et leur approche radicale de la coupe. J'y apprends le flou, le tailleur et le corset, les trois langues de la couture.</p><p>Avec Batlle, je réinterprète les histoires anciennes — chevaleresses, sorcières, mystiques, héroïnes oubliées — pour habiller les femmes d'aujourd'hui.</p>",
+      "label": "t:sections.batlle-biography.settings.body.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "Compétences"
+    },
+    {
+      "type": "text",
+      "id": "skill_1_label",
+      "default": "Flou",
+      "label": "t:sections.batlle-biography.settings.skill_1_label.label"
+    },
+    {
+      "type": "text",
+      "id": "skill_1_value",
+      "default": "Drapé",
+      "label": "t:sections.batlle-biography.settings.skill_1_value.label"
+    },
+    {
+      "type": "text",
+      "id": "skill_2_label",
+      "default": "Tailleur",
+      "label": "t:sections.batlle-biography.settings.skill_2_label.label"
+    },
+    {
+      "type": "text",
+      "id": "skill_2_value",
+      "default": "Coupe · Structure",
+      "label": "t:sections.batlle-biography.settings.skill_2_value.label"
+    },
+    {
+      "type": "text",
+      "id": "skill_3_label",
+      "default": "Corset",
+      "label": "t:sections.batlle-biography.settings.skill_3_label.label"
+    },
+    {
+      "type": "text",
+      "id": "skill_3_value",
+      "default": "Architecture du corps",
+      "label": "t:sections.batlle-biography.settings.skill_3_value.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-biography.presets.name"
+    }
+  ]
+}
+{% endschema %}

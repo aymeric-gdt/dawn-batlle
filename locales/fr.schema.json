@@ -364,6 +364,78 @@
     }
   },
   "sections": {
+    "batlle-collection": {
+      "name": "Collection",
+      "settings": {
+        "intro_text": { "label": "Texte d'introduction" }
+      },
+      "blocks": {
+        "project": {
+          "name": "Projet",
+          "settings": {
+            "image": { "label": "Image" },
+            "title": { "label": "Titre" },
+            "description": { "label": "Description" }
+          }
+        }
+      },
+      "presets": { "name": "Collection" }
+    },
+    "batlle-savoir-faire": {
+      "name": "Savoir-Faire & Moulage",
+      "settings": {
+        "image": { "label": "Image" },
+        "title": { "label": "Titre" },
+        "body": { "label": "Texte" },
+        "layout": {
+          "label": "Mise en page",
+          "options__1": { "label": "Image à gauche" },
+          "options__2": { "label": "Image à droite" }
+        }
+      },
+      "presets": { "name": "Savoir-Faire & Moulage" }
+    },
+    "batlle-biography": {
+      "name": "Biographie — Louise",
+      "settings": {
+        "portrait": { "label": "Portrait" },
+        "title": { "label": "Nom" },
+        "body": { "label": "Biographie" },
+        "skill_1": { "label": "Compétence 1" },
+        "skill_2": { "label": "Compétence 2" },
+        "skill_3": { "label": "Compétence 3" }
+      },
+      "presets": { "name": "Biographie — Louise" }
+    },
+    "batlle-presse": {
+      "name": "Presse",
+      "read_article": "Lire l'article",
+      "settings": {
+        "title": { "label": "Titre" }
+      },
+      "blocks": {
+        "press_item": {
+          "name": "Article de presse",
+          "settings": {
+            "image": { "label": "Image" },
+            "publication": { "label": "Publication" },
+            "link": { "label": "Lien vers l'article" }
+          }
+        }
+      },
+      "presets": { "name": "Presse" }
+    },
+    "batlle-contact": {
+      "name": "Contact",
+      "settings": {
+        "title": { "label": "Titre" },
+        "body": { "label": "Description" },
+        "email": { "label": "Email" },
+        "booking_link": { "label": "Lien de rendez-vous" },
+        "booking_label": { "label": "Texte du bouton" }
+      },
+      "presets": { "name": "Contact" }
+    },
     "all": {
       "padding": {
         "section_padding_heading": "Remplissage",

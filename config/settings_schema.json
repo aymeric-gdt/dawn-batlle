@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "15.4.1",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_name": "BATLLE",
+    "theme_version": "1.0.0",
+    "theme_author": "BATLLE",
+    "theme_documentation_url": "https://batlle.fr",
+    "theme_support_url": "https://batlle.fr"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -111,7 +111,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
+        "default": "playfair_display_n4",
         "label": "t:settings_schema.typography.settings.type_header_font.label"
       },
       {
@@ -122,7 +122,7 @@
         "step": 5,
         "unit": "%",
         "label": "t:settings_schema.typography.settings.heading_scale.label",
-        "default": 100
+        "default": 120
       },
       {
         "type": "header",
@@ -131,7 +131,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
+        "default": "work_sans_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label"
       },
       {

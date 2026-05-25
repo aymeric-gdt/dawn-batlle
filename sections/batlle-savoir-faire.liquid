@@ -1,0 +1,514 @@
+<style>
+  .batlle-savoir-faire__main {
+    padding: 9rem 0;
+  }
+
+  .batlle-savoir-faire__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-savoir-faire__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: var(--font-heading-weight);
+    margin: 0 0 1.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-savoir-faire__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-savoir-faire__intro {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.65);
+    margin-bottom: 3rem;
+    max-width: 32rem;
+  }
+
+  .batlle-savoir-faire__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-savoir-faire__layout {
+      grid-template-columns: 5fr 7fr;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  .batlle-savoir-faire__image-sticky {
+    position: relative;
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-savoir-faire__image-sticky {
+      position: sticky;
+      top: calc(var(--header-height, 90px) + 3rem);
+    }
+  }
+
+  .batlle-savoir-faire__image-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .batlle-process__step {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(var(--color-foreground), 0.12);
+    transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-process__step:hover {
+    padding-left: 1rem;
+  }
+
+  .batlle-process__step:first-child {
+    border-top: none;
+  }
+
+  .batlle-process__number {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: rgba(var(--color-foreground), 0.25);
+    line-height: 0.9;
+    flex-shrink: 0;
+    width: 5rem;
+  }
+
+  .batlle-process__content {
+    flex: 1;
+  }
+
+  .batlle-process__step-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin: 0 0 0.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-process__step-body {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.6);
+    max-width: 28rem;
+  }
+
+  .batlle-process__arrow {
+    font-size: 2rem;
+    color: rgb(var(--color-foreground));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    align-self: center;
+  }
+
+  .batlle-process__step:hover .batlle-process__arrow {
+    opacity: 1;
+  }
+
+  /* Dark moulage section */
+  .batlle-moulage {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 9rem 0;
+  }
+
+  .batlle-moulage__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-moulage__layout {
+      grid-template-columns: 7fr 5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  .batlle-moulage__image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .batlle-moulage__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+  .batlle-moulage__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-background), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-moulage__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: var(--font-heading-weight);
+    margin: 0 0 2rem;
+    color: rgb(var(--color-background));
+  }
+
+  .batlle-moulage__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-moulage__body {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(var(--color-background), 0.7);
+    margin-bottom: 3rem;
+  }
+
+  .batlle-moulage__body p {
+    margin: 0 0 1rem;
+  }
+
+  .batlle-moulage__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .batlle-moulage__materials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(var(--color-background), 0.2);
+  }
+
+  .batlle-moulage__material-label {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-background), 0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .batlle-moulage__material-value {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    color: rgb(var(--color-background));
+  }
+</style>
+
+<div class="batlle-savoir-faire color-{{ section.settings.color_scheme }} gradient" id="batlle-savoir-faire">
+  <div class="batlle-savoir-faire__main">
+    <div class="page-width">
+      <div class="batlle-savoir-faire__layout">
+        <div class="batlle-savoir-faire__image-sticky{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <div class="batlle-moulage__image">
+            {%- if section.settings.process_image != blank -%}
+              {%- assign image_height = section.settings.process_image.width | divided_by: section.settings.process_image.aspect_ratio -%}
+              {{
+                section.settings.process_image
+                | image_url: width: 800
+                | image_tag:
+                  width: section.settings.process_image.width,
+                  height: image_height,
+                  sizes: '(min-width: 990px) 40vw, 100vw',
+                  widths: '375, 550, 750',
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
+          {%- if section.settings.supertitle != blank -%}
+            <p class="batlle-savoir-faire__supertitle">{{ section.settings.supertitle }}</p>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="batlle-savoir-faire__title">{{ section.settings.title }}</h2>
+          {%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <div class="batlle-savoir-faire__intro">
+              {{ section.settings.intro }}
+            </div>
+          {%- endif -%}
+
+          <div class="batlle-process">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'step' -%}
+                <div
+                  class="batlle-process__step"
+                  {{ block.shopify_attributes }}
+                >
+                  <span class="batlle-process__number">{{ block.settings.number }}</span>
+                  <div class="batlle-process__content">
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="batlle-process__step-title">{{ block.settings.title }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.body != blank -%}
+                      <div class="batlle-process__step-body">
+                        {{ block.settings.body }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <span class="batlle-process__arrow">→</span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="batlle-moulage">
+    <div class="page-width">
+      <div class="batlle-moulage__layout">
+        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
+          <div class="batlle-moulage__image">
+            {%- if section.settings.moulage_image != blank -%}
+              {%- assign img_h = section.settings.moulage_image.width | divided_by: section.settings.moulage_image.aspect_ratio -%}
+              {{
+                section.settings.moulage_image
+                | image_url: width: 900
+                | image_tag:
+                  width: section.settings.moulage_image.width,
+                  height: img_h,
+                  sizes: '(min-width: 990px) 60vw, 100vw',
+                  widths: '375, 550, 750, 900',
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
+          {%- if section.settings.moulage_supertitle != blank -%}
+            <p class="batlle-moulage__supertitle">{{ section.settings.moulage_supertitle }}</p>
+          {%- endif -%}
+          {%- if section.settings.moulage_title != blank -%}
+            <h2 class="batlle-moulage__title">{{ section.settings.moulage_title }}</h2>
+          {%- endif -%}
+          {%- if section.settings.moulage_body != blank -%}
+            <div class="batlle-moulage__body">
+              {{ section.settings.moulage_body }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mat_1_value != blank or section.settings.mat_2_value != blank or section.settings.mat_3_value != blank -%}
+            <dl class="batlle-moulage__materials">
+              {%- if section.settings.mat_1_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_1_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_1_value }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.mat_2_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_2_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_2_value }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.mat_3_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_3_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_3_value }}</dd>
+                </div>
+              {%- endif -%}
+            </dl>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-savoir-faire.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "Le geste · L'atelier",
+      "label": "t:sections.batlle-savoir-faire.settings.supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Modéliste <em>avant tout.</em></p>",
+      "label": "t:sections.batlle-savoir-faire.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "default": "<p>Formée à l'Institut Français de la Mode et à l'AICP, je travaille le vêtement comme une sculpture vivante. Le moulage, le drapé et la coupe sont au cœur de chaque création.</p>",
+      "label": "t:sections.batlle-savoir-faire.settings.intro.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "process_image",
+      "label": "t:sections.batlle-savoir-faire.settings.process_image.label"
+    },
+    {
+      "type": "header",
+      "content": "Moulage"
+    },
+    {
+      "type": "text",
+      "id": "moulage_supertitle",
+      "default": "Processus créatif · Moulage",
+      "label": "t:sections.batlle-savoir-faire.settings.moulage_supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "moulage_title",
+      "default": "<p>Le moulage, <em>la pensée du tissu.</em></p>",
+      "label": "t:sections.batlle-savoir-faire.settings.moulage_title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "moulage_body",
+      "default": "<p>Chaque création commence sur le mannequin. Je travaille la toile brute en la sculptant directement, jusqu'à ce que la forme raconte quelque chose.</p><p>Cette technique ancestrale, héritée de la haute couture parisienne, permet une liberté totale : la pièce naît du geste, non du dessin.</p>",
+      "label": "t:sections.batlle-savoir-faire.settings.moulage_body.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "moulage_image",
+      "label": "t:sections.batlle-savoir-faire.settings.moulage_image.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_1_label",
+      "default": "Flou",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_1_label.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_1_value",
+      "default": "Soie · Mousseline",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_1_value.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_2_label",
+      "default": "Tailleur",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_2_label.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_2_value",
+      "default": "Laine · Coton",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_2_value.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_3_label",
+      "default": "Corseterie",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_3_label.label"
+    },
+    {
+      "type": "text",
+      "id": "mat_3_value",
+      "default": "Baleinage main",
+      "label": "t:sections.batlle-savoir-faire.settings.mat_3_value.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "t:sections.batlle-savoir-faire.blocks.step.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "default": "01",
+          "label": "t:sections.batlle-savoir-faire.blocks.step.settings.number.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Croquis",
+          "label": "t:sections.batlle-savoir-faire.blocks.step.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "default": "<p>L'idée naît à l'encre, sur papier kraft. Une silhouette se dessine, un détail s'invente — souvent puisé dans une figure historique ou mythologique.</p>",
+          "label": "t:sections.batlle-savoir-faire.blocks.step.settings.body.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-savoir-faire.presets.name",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Croquis",
+            "body": "<p>L'idée naît à l'encre, sur papier kraft. Une silhouette se dessine, un détail s'invente — souvent puisé dans une figure historique ou mythologique.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Patronage",
+            "body": "<p>Construction des bases en toile, ajustées à la forme. Chaque ligne calculée, chaque courbe pensée comme une architecture du corps.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Drapé",
+            "body": "<p>Le tissu se sculpte directement sur le mannequin. La main décide, la matière obéit. C'est là que naît la pièce vivante.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Confection main · Paris",
+            "body": "<p>Chaque pièce est entièrement assemblée à la main dans mon atelier parisien. Coutures invisibles, finitions au point d'esprit, baleinage spiralé pour les corsets.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,452 @@
+<style>
+  .batlle-collection {
+    position: relative;
+    padding: 9rem 0;
+  }
+
+  .batlle-collection__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-collection__header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .batlle-collection__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-collection__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 0.95;
+    font-weight: var(--font-heading-weight);
+    margin: 0;
+    max-width: 48rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-collection__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-collection__quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    line-height: 1.4;
+    font-style: italic;
+    color: rgba(var(--color-foreground), 0.6);
+    max-width: 20rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-collection__quote {
+      text-align: right;
+    }
+  }
+
+  .batlle-collection__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-collection__grid {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 3rem 2rem;
+    }
+  }
+
+  .batlle-project {
+    position: relative;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-project:nth-child(1) {
+      grid-column: span 7;
+    }
+
+    .batlle-project:nth-child(2) {
+      grid-column: span 5;
+      margin-top: 8rem;
+    }
+
+    .batlle-project:nth-child(3) {
+      grid-column: 2 / span 6;
+    }
+  }
+
+  .batlle-project a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .batlle-project__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.04);
+    margin-bottom: 1.5rem;
+  }
+
+  .batlle-project__image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-project:hover .batlle-project__image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .batlle-project__figure-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(var(--color-background), 0.85);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 1rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-project__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .batlle-project__category {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 0.4rem;
+  }
+
+  .batlle-project__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-project__description {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: rgba(var(--color-foreground), 0.6);
+    max-width: 28rem;
+  }
+
+  .batlle-project__arrow {
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.32, 1);
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-project:hover .batlle-project__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .batlle-collection__footer {
+    margin-top: 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-collection__footer {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .batlle-collection__footer-text {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.3;
+    color: rgb(var(--color-foreground));
+    max-width: 36rem;
+  }
+
+  .batlle-collection__footer-text em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-collection__footer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 1.2rem 2.4rem;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .batlle-collection__footer-cta:hover {
+    opacity: 0.85;
+  }
+
+  .batlle-collection__footer-cta-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .batlle-collection__footer-cta:hover .batlle-collection__footer-cta-arrow {
+    transform: translateX(3px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .batlle-collection__grid {
+      gap: 3rem;
+    }
+
+    .batlle-project__arrow {
+      display: none;
+    }
+  }
+</style>
+
+<div class="batlle-collection color-{{ section.settings.color_scheme }} gradient" id="batlle-collection">
+  <div class="page-width">
+    <div class="batlle-collection__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div>
+        {%- if section.settings.supertitle != blank -%}
+          <p class="batlle-collection__supertitle">{{ section.settings.supertitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="batlle-collection__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.quote != blank -%}
+        <p class="batlle-collection__quote">{{ section.settings.quote }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="batlle-collection__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'project' -%}
+          <div
+            class="batlle-project{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- liquid
+              assign has_link = false
+              if block.settings.link != blank
+                assign has_link = true
+              endif
+            -%}
+            {%- if has_link -%}<a href="{{ block.settings.link }}">{%- endif -%}
+              <div class="batlle-project__image-wrapper">
+                {%- if block.settings.image != blank -%}
+                  {%- assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 1200
+                    | image_tag:
+                      width: block.settings.image.width,
+                      height: image_height,
+                      sizes: '(min-width: 750px) 50vw, 100vw',
+                      widths: '375, 550, 750, 1100',
+                      loading: 'lazy'
+                  }}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+                {%- if block.settings.figure_tag != blank -%}
+                  <span class="batlle-project__figure-tag">{{ block.settings.figure_tag }}</span>
+                {%- endif -%}
+              </div>
+
+              <div class="batlle-project__info">
+                <div>
+                  {%- if block.settings.category != blank -%}
+                    <p class="batlle-project__category">{{ block.settings.category }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="batlle-project__title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <div class="batlle-project__description">
+                      {{ block.settings.description }}
+                    </div>
+                  {%- endif -%}
+                </div>
+                <span class="batlle-project__arrow">→</span>
+              </div>
+            {%- if has_link -%}</a>{%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.footer_text != blank -%}
+      <div class="batlle-collection__footer{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <p class="batlle-collection__footer-text">{{ section.settings.footer_text }}</p>
+        {%- if section.settings.footer_cta_label != blank and section.settings.footer_cta_link != blank -%}
+          <a href="{{ section.settings.footer_cta_link }}" class="batlle-collection__footer-cta">
+            {{ section.settings.footer_cta_label }}
+            <span class="batlle-collection__footer-cta-arrow">→</span>
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-collection.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "La collection · Figures",
+      "label": "t:sections.batlle-collection.settings.supertitle.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Chaque femme mérite <em>son armure.</em>",
+      "label": "t:sections.batlle-collection.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "default": "Six identités, un même geste : sculpter le tissu pour révéler la puissance de celle qui le porte.",
+      "label": "t:sections.batlle-collection.settings.quote.label"
+    },
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "default": "<p>Une silhouette vous parle&nbsp;? <em>Imaginons la vôtre.</em></p>",
+      "label": "t:sections.batlle-collection.settings.footer_text.label"
+    },
+    {
+      "type": "text",
+      "id": "footer_cta_label",
+      "default": "Demander une pièce sur-mesure",
+      "label": "t:sections.batlle-collection.settings.footer_cta_label.label"
+    },
+    {
+      "type": "text",
+      "id": "footer_cta_link",
+      "default": "#batlle-contact",
+      "label": "t:sections.batlle-collection.settings.footer_cta_link.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "t:sections.batlle-collection.blocks.project.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.batlle-collection.blocks.project.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "figure_tag",
+          "default": "Fig. 01",
+          "label": "t:sections.batlle-collection.blocks.project.settings.figure_tag.label"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "default": "Flou",
+          "label": "t:sections.batlle-collection.blocks.project.settings.category.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Robe bénitier",
+          "label": "t:sections.batlle-collection.blocks.project.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Robe longue et élégante à double col bénitier.</p>",
+          "label": "t:sections.batlle-collection.blocks.project.settings.description.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.batlle-collection.blocks.project.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-collection.presets.name",
+      "blocks": [
+        {
+          "type": "project"
+        },
+        {
+          "type": "project"
+        },
+        {
+          "type": "project"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

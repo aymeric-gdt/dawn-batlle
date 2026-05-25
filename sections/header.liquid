@@ -94,6 +94,26 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .header__instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+  }
+
+  .header__instagram-link .svg-wrapper {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .header__instagram-handle {
+    font-family: var(--font-body-family);
+  }
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -160,7 +180,7 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <span class="h0">{{ shop.name }}</span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -200,12 +220,21 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <span class="h0">{{ shop.name }}</span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
+    {%- endif -%}
+
+    {%- if settings.social_instagram_link != blank -%}
+      <a href="{{ settings.social_instagram_link }}" class="header__instagram-link link" target="_blank" rel="noopener" aria-label="Instagram @modebylouise">
+        <span class="svg-wrapper">
+          {{- 'icon-instagram.svg' | inline_asset_content -}}
+        </span>
+        <span class="header__instagram-handle">@modebylouise</span>
+      </a>
     {%- endif -%}
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">

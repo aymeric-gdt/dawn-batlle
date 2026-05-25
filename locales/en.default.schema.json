@@ -364,6 +364,283 @@
     }
   },
   "sections": {
+    "batlle-hero": {
+      "name": "Hero",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "subtitle": {
+          "label": "Subtitle"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "hero_image": {
+          "label": "Image"
+        },
+        "overlay_piece_number": {
+          "label": "Featured piece ref."
+        },
+        "overlay_piece_title": {
+          "label": "Featured piece title"
+        },
+        "overlay_piece_materials": {
+          "label": "Featured piece materials"
+        },
+        "cta_1_label": {
+          "label": "CTA 1 text"
+        },
+        "cta_1_link": {
+          "label": "CTA 1 link"
+        },
+        "cta_2_label": {
+          "label": "CTA 2 text"
+        },
+        "cta_2_link": {
+          "label": "CTA 2 link"
+        }
+      },
+      "presets": {
+        "name": "Hero"
+      }
+    },
+    "batlle-collection": {
+      "name": "Collection",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "quote": {
+          "label": "Quote"
+        },
+        "footer_text": {
+          "label": "Footer text"
+        },
+        "footer_cta_label": {
+          "label": "Footer CTA text"
+        },
+        "footer_cta_link": {
+          "label": "Footer CTA link"
+        }
+      },
+      "blocks": {
+        "project": {
+          "name": "Project",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "figure_tag": {
+              "label": "Figure tag"
+            },
+            "category": {
+              "label": "Category"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "description": {
+              "label": "Description"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Collection"
+      }
+    },
+    "batlle-savoir-faire": {
+      "name": "Savoir-Faire & Moulage",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "intro": {
+          "label": "Introduction"
+        },
+        "process_image": {
+          "label": "Process image"
+        },
+        "moulage_supertitle": {
+          "label": "Moulage supertitle"
+        },
+        "moulage_title": {
+          "label": "Moulage title"
+        },
+        "moulage_body": {
+          "label": "Moulage text"
+        },
+        "moulage_image": {
+          "label": "Moulage image"
+        },
+        "mat_1_label": {
+          "label": "Material 1 label"
+        },
+        "mat_1_value": {
+          "label": "Material 1 value"
+        },
+        "mat_2_label": {
+          "label": "Material 2 label"
+        },
+        "mat_2_value": {
+          "label": "Material 2 value"
+        },
+        "mat_3_label": {
+          "label": "Material 3 label"
+        },
+        "mat_3_value": {
+          "label": "Material 3 value"
+        }
+      },
+      "blocks": {
+        "step": {
+          "name": "Step",
+          "settings": {
+            "number": {
+              "label": "Number"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "body": {
+              "label": "Description"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Savoir-Faire & Moulage"
+      }
+    },
+    "batlle-biography": {
+      "name": "Biography",
+      "settings": {
+        "portrait": {
+          "label": "Portrait"
+        },
+        "name_badge": {
+          "label": "Name on portrait"
+        },
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "body": {
+          "label": "Biography"
+        },
+        "skill_1_label": {
+          "label": "Skill 1 label"
+        },
+        "skill_1_value": {
+          "label": "Skill 1 value"
+        },
+        "skill_2_label": {
+          "label": "Skill 2 label"
+        },
+        "skill_2_value": {
+          "label": "Skill 2 value"
+        },
+        "skill_3_label": {
+          "label": "Skill 3 label"
+        },
+        "skill_3_value": {
+          "label": "Skill 3 value"
+        }
+      },
+      "presets": {
+        "name": "Biography"
+      }
+    },
+    "batlle-presse": {
+      "name": "Press",
+      "read_article": "Read article",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "quote": {
+          "label": "Quote"
+        },
+        "featured_publication": {
+          "label": "Featured publication"
+        },
+        "featured_date": {
+          "label": "Featured date"
+        },
+        "featured_title": {
+          "label": "Featured title"
+        },
+        "featured_excerpt": {
+          "label": "Featured excerpt"
+        },
+        "featured_link": {
+          "label": "Featured link"
+        }
+      },
+      "blocks": {
+        "press_cover": {
+          "name": "Press cover",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "publication": {
+              "label": "Publication"
+            },
+            "date": {
+              "label": "Date"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Press"
+      }
+    },
+    "batlle-contact": {
+      "name": "Contact",
+      "atelier": "Atelier",
+      "atelier_value": "Freelance · Paris\nAppointment only",
+      "contact": "Contact",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "body": {
+          "label": "Description"
+        },
+        "email": {
+          "label": "Email"
+        }
+      },
+      "presets": {
+        "name": "Contact"
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",

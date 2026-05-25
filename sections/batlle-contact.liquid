@@ -1,0 +1,234 @@
+<style>
+  .batlle-contact {
+    padding: 9rem 0;
+    border-top: 1px solid rgba(var(--color-foreground), 0.15);
+  }
+
+  .batlle-contact__inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .batlle-contact__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  .batlle-contact__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: var(--font-heading-weight);
+    margin: 0 0 2rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-contact__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-contact__body {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+    margin-bottom: 3rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .batlle-contact__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .batlle-contact__email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 1.2rem 2.4rem;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .batlle-contact__email-btn:hover {
+    opacity: 0.85;
+  }
+
+  .batlle-contact__email-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .batlle-contact__email-btn:hover .batlle-contact__email-arrow {
+    transform: translateX(3px);
+  }
+
+  .batlle-contact__instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.4);
+    padding-bottom: 0.3rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .batlle-contact__instagram-link:hover {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .batlle-contact__instagram-link .svg-wrapper {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .batlle-contact__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.15);
+    text-align: left;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 640px) {
+    .batlle-contact__info {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .batlle-contact__info-label {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .batlle-contact__info-value {
+    font-size: 1.4rem;
+    color: rgba(var(--color-foreground), 0.8);
+    line-height: 1.5;
+  }
+</style>
+
+<div class="batlle-contact color-{{ section.settings.color_scheme }} gradient" id="batlle-contact">
+  <div class="page-width">
+    <div class="batlle-contact__inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.supertitle != blank -%}
+        <p class="batlle-contact__supertitle">{{ section.settings.supertitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="batlle-contact__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <div class="batlle-contact__body">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+
+      <div class="batlle-contact__ctas">
+        {%- if section.settings.email != blank -%}
+          <a href="mailto:{{ section.settings.email }}" class="batlle-contact__email-btn">
+            {{ section.settings.email }}
+            <span class="batlle-contact__email-arrow">→</span>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_instagram_link != blank -%}
+          <a href="{{ settings.social_instagram_link }}" class="batlle-contact__instagram-link" target="_blank" rel="noopener">
+            <span class="svg-wrapper">
+              {{- 'icon-instagram.svg' | inline_asset_content -}}
+            </span>
+            @modebylouise
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="batlle-contact__info">
+        <div>
+          <p class="batlle-contact__info-label">{{ 'sections.batlle-contact.atelier' | t }}</p>
+          <p class="batlle-contact__info-value">{{ 'sections.batlle-contact.atelier_value' | t }}</p>
+        </div>
+        <div>
+          <p class="batlle-contact__info-label">{{ 'sections.batlle-contact.contact' | t }}</p>
+          <p class="batlle-contact__info-value">{% if section.settings.email != blank %}{{ section.settings.email }}{% endif %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-contact.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "Prendre rendez-vous",
+      "label": "t:sections.batlle-contact.settings.supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Une pièce <em>unique</em> commence par <em>une rencontre.</em></p>",
+      "label": "t:sections.batlle-contact.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "default": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi — chaque projet commence par une conversation.</p>",
+      "label": "t:sections.batlle-contact.settings.body.label"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "default": "contact@batlle.fr",
+      "label": "t:sections.batlle-contact.settings.email.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-contact.presets.name"
+    }
+  ]
+}
+{% endschema %}

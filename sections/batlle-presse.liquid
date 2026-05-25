@@ -1,0 +1,391 @@
+<style>
+  .batlle-presse {
+    padding: 9rem 0;
+  }
+
+  .batlle-presse__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-presse__header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .batlle-presse__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-presse__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 0.95;
+    font-weight: var(--font-heading-weight);
+    margin: 0;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-presse__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-presse__header-quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    line-height: 1.4;
+    font-style: italic;
+    color: rgba(var(--color-foreground), 0.6);
+    max-width: 20rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-presse__header-quote {
+      text-align: right;
+    }
+  }
+
+  .batlle-presse__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-presse__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .batlle-presse__card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .batlle-presse__card-image {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: rgb(var(--color-background));
+    margin-bottom: 0.8rem;
+  }
+
+  .batlle-presse__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-presse__card:hover .batlle-presse__card-image img {
+    transform: scale(1.05);
+  }
+
+  .batlle-presse__card-name {
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-presse__card-date {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-top: 0.25rem;
+  }
+
+  /* Featured article row */
+  .batlle-presse__featured {
+    border-top: 1px solid rgba(var(--color-foreground), 0.15);
+  }
+
+  .batlle-presse__featured-link {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.15);
+    text-decoration: none;
+    color: inherit;
+    transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-presse__featured-link:hover {
+    padding-left: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .batlle-presse__featured-link {
+      grid-template-columns: 3fr 7fr 2fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  .batlle-presse__featured-name {
+    font-family: var(--font-heading-family);
+    font-size: 2.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-presse__featured-date {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-top: 0.25rem;
+  }
+
+  .batlle-presse__featured-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    margin: 0 0 0.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-presse__featured-excerpt {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.6);
+    max-width: 32rem;
+  }
+
+  .batlle-presse__featured-link-label {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.4);
+    padding-bottom: 0.3rem;
+    transition: border-color 0.3s ease;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .batlle-presse__featured-link:hover .batlle-presse__featured-link-label {
+    border-color: rgb(var(--color-foreground));
+  }
+</style>
+
+<div class="batlle-presse color-{{ section.settings.color_scheme }} gradient" id="batlle-presse">
+  <div class="page-width">
+    <div class="batlle-presse__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div>
+        {%- if section.settings.supertitle != blank -%}
+          <p class="batlle-presse__supertitle">{{ section.settings.supertitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="batlle-presse__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.quote != blank -%}
+        <p class="batlle-presse__header-quote">{{ section.settings.quote }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="batlle-presse__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'press_cover' -%}
+          <div
+            class="batlle-presse__card-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- assign has_cover_link = false -%}
+            {%- if block.settings.link != blank -%}{%- assign has_cover_link = true -%}{%- endif -%}
+            {%- if has_cover_link -%}<a href="{{ block.settings.link }}" class="batlle-presse__card" target="_blank" rel="noopener">{%- else -%}<div class="batlle-presse__card">{%- endif -%}
+              <div class="batlle-presse__card-image">
+                {%- if block.settings.image != blank -%}
+                  {%- assign img_h = block.settings.image.width | divided_by: block.settings.image.aspect_ratio -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 600
+                    | image_tag:
+                      width: block.settings.image.width,
+                      height: img_h,
+                      sizes: '(min-width: 750px) 25vw, 50vw',
+                      widths: '375, 550, 750',
+                      loading: 'lazy'
+                  }}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+              {%- if block.settings.publication != blank -%}
+                <p class="batlle-presse__card-name">{{ block.settings.publication }}</p>
+              {%- endif -%}
+              {%- if block.settings.date != blank -%}
+                <p class="batlle-presse__card-date">{{ block.settings.date }}</p>
+              {%- endif -%}
+            {%- if has_cover_link -%}</a>{%- else -%}</div>{%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.featured_publication != blank and section.settings.featured_link != blank -%}
+      <div class="batlle-presse__featured{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <a href="{{ section.settings.featured_link }}" class="batlle-presse__featured-link" target="_blank" rel="noopener">
+          <div>
+            <p class="batlle-presse__featured-name">{{ section.settings.featured_publication }}</p>
+            {%- if section.settings.featured_date != blank -%}
+              <p class="batlle-presse__featured-date">{{ section.settings.featured_date }}</p>
+            {%- endif -%}
+          </div>
+          <div>
+            {%- if section.settings.featured_title != blank -%}
+              <h3 class="batlle-presse__featured-title">{{ section.settings.featured_title }}</h3>
+            {%- endif -%}
+            {%- if section.settings.featured_excerpt != blank -%}
+              <p class="batlle-presse__featured-excerpt">{{ section.settings.featured_excerpt }}</p>
+            {%- endif -%}
+          </div>
+          <div class="batlle-presse__featured-label-col">
+            <span class="batlle-presse__featured-link-label">{{ 'sections.batlle-presse.read_article' | t }}</span>
+          </div>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-presse.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "Presse · Editorial",
+      "label": "t:sections.batlle-presse.settings.supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Vu <em>en presse</em>.</p>",
+      "label": "t:sections.batlle-presse.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "default": "Une jeune maison qui réécrit le vocabulaire de la couture.",
+      "label": "t:sections.batlle-presse.settings.quote.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-3",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "Article vedette"
+    },
+    {
+      "type": "text",
+      "id": "featured_publication",
+      "default": "L'Officiel",
+      "label": "t:sections.batlle-presse.settings.featured_publication.label"
+    },
+    {
+      "type": "text",
+      "id": "featured_date",
+      "default": "Juin 2024",
+      "label": "t:sections.batlle-presse.settings.featured_date.label"
+    },
+    {
+      "type": "text",
+      "id": "featured_title",
+      "default": "Portrait : Louise, la couture comme partition",
+      "label": "t:sections.batlle-presse.settings.featured_title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_excerpt",
+      "default": "Entre violon et atelier, le parcours singulier d'une créatrice à suivre.",
+      "label": "t:sections.batlle-presse.settings.featured_excerpt.label"
+    },
+    {
+      "type": "url",
+      "id": "featured_link",
+      "label": "t:sections.batlle-presse.settings.featured_link.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "press_cover",
+      "name": "t:sections.batlle-presse.blocks.press_cover.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.batlle-presse.blocks.press_cover.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "publication",
+          "label": "t:sections.batlle-presse.blocks.press_cover.settings.publication.label"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "t:sections.batlle-presse.blocks.press_cover.settings.date.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.batlle-presse.blocks.press_cover.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-presse.presets.name",
+      "blocks": [
+        {
+          "type": "press_cover"
+        },
+        {
+          "type": "press_cover"
+        },
+        {
+          "type": "press_cover"
+        },
+        {
+          "type": "press_cover"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

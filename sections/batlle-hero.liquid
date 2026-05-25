@@ -1,0 +1,387 @@
+<style>
+  .batlle-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--header-height, 90px) + 1rem);
+    overflow: hidden;
+  }
+
+  .batlle-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-hero__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  .batlle-hero__content {
+    position: relative;
+  }
+
+  .batlle-hero__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  .batlle-hero__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    font-weight: var(--font-heading-weight);
+    margin: 0;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: var(--font-heading-weight);
+    line-height: 1;
+    font-style: italic;
+    margin: 0.5rem 0 1.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-hero__description {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+    max-width: 32rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .batlle-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .batlle-hero__cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 1.2rem 2.4rem;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .batlle-hero__cta-primary:hover {
+    opacity: 0.85;
+  }
+
+  .batlle-hero__cta-primary-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .batlle-hero__cta-primary:hover .batlle-hero__cta-primary-arrow {
+    transform: translateX(3px);
+  }
+
+  .batlle-hero__cta-secondary {
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.4);
+    padding-bottom: 0.3rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .batlle-hero__cta-secondary:hover {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .batlle-hero__visual {
+    position: relative;
+  }
+
+  .batlle-hero__image-wrapper {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    max-width: 28rem;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-hero__image-wrapper {
+      margin-left: auto;
+    }
+  }
+
+  .batlle-hero__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .batlle-hero__overlay-card {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    background: rgb(var(--color-background));
+    border: 1px solid rgba(var(--color-foreground), 0.15);
+    padding: 1rem 1.5rem;
+    max-width: 14rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  @media screen and (min-width: 990px) {
+    .batlle-hero__overlay-card {
+      left: -3rem;
+    }
+  }
+
+  .batlle-hero__overlay-number {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 0.3rem;
+  }
+
+  .batlle-hero__overlay-name {
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    line-height: 1.15;
+    color: rgb(var(--color-foreground));
+    margin: 0;
+  }
+
+  .batlle-hero__overlay-materials {
+    font-size: 1.2rem;
+    color: rgba(var(--color-foreground), 0.6);
+    font-style: italic;
+    margin-top: 0.3rem;
+  }
+
+  .batlle-hero__scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.4);
+    animation: batlle-scroll-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes batlle-scroll-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  @media screen and (max-width: 749px) {
+    .batlle-hero__overlay-card {
+      bottom: -1rem;
+      left: -0.5rem;
+      max-width: 12rem;
+      padding: 0.8rem 1.2rem;
+    }
+    .batlle-hero__overlay-name {
+      font-size: 1.6rem;
+    }
+    .batlle-hero__description {
+      font-size: 1.4rem;
+      max-width: 100%;
+    }
+  }
+</style>
+
+<div class="batlle-hero color-{{ section.settings.color_scheme }} gradient{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width batlle-hero__grid">
+    <div class="batlle-hero__content">
+      {%- if section.settings.supertitle != blank -%}
+        <p class="batlle-hero__supertitle">{{ section.settings.supertitle }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h1 class="batlle-hero__title">{{ section.settings.title }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="batlle-hero__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="batlle-hero__description">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+
+      <div class="batlle-hero__ctas">
+        {%- if section.settings.cta_1_label != blank and section.settings.cta_1_link != blank -%}
+          <a href="{{ section.settings.cta_1_link }}" class="batlle-hero__cta-primary">
+            {{ section.settings.cta_1_label }}
+            <span class="batlle-hero__cta-primary-arrow">→</span>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.cta_2_label != blank and section.settings.cta_2_link != blank -%}
+          <a href="{{ section.settings.cta_2_link }}" class="batlle-hero__cta-secondary">
+            {{ section.settings.cta_2_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="batlle-hero__visual">
+      <div class="batlle-hero__image-wrapper">
+        {%- if section.settings.hero_image != blank -%}
+          {%- assign image_height = section.settings.hero_image.width | divided_by: section.settings.hero_image.aspect_ratio -%}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1024
+            | image_tag:
+              width: 1024,
+              height: image_height,
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              widths: '375, 550, 750, 1024',
+              loading: 'eager'
+          }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.overlay_piece_title != blank -%}
+        <div class="batlle-hero__overlay-card">
+          {%- if section.settings.overlay_piece_number != blank -%}
+            <p class="batlle-hero__overlay-number">{{ section.settings.overlay_piece_number }}</p>
+          {%- endif -%}
+          <p class="batlle-hero__overlay-name">{{ section.settings.overlay_piece_title }}</p>
+          {%- if section.settings.overlay_piece_materials != blank -%}
+            <p class="batlle-hero__overlay-materials">{{ section.settings.overlay_piece_materials }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="batlle-hero__scroll-hint">↓ Faire défiler</div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-hero.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "Maison Batlle · Paris · Édition 01",
+      "label": "t:sections.batlle-hero.settings.supertitle.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "BATLLE",
+      "label": "t:sections.batlle-hero.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "l'armure d'une femme.",
+      "label": "t:sections.batlle-hero.settings.subtitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Pièces sur-mesure inspirées des chevaleresses, des sorcières et des figures puissantes de l'histoire. Confection main à Paris.</p>",
+      "label": "t:sections.batlle-hero.settings.description.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "t:sections.batlle-hero.settings.hero_image.label"
+    },
+    {
+      "type": "text",
+      "id": "overlay_piece_number",
+      "default": "Pièce N° 01",
+      "label": "t:sections.batlle-hero.settings.overlay_piece_number.label"
+    },
+    {
+      "type": "text",
+      "id": "overlay_piece_title",
+      "default": "L'Armure de Jeanne",
+      "label": "t:sections.batlle-hero.settings.overlay_piece_title.label"
+    },
+    {
+      "type": "text",
+      "id": "overlay_piece_materials",
+      "default": "Cuir, métal, soie noire",
+      "label": "t:sections.batlle-hero.settings.overlay_piece_materials.label"
+    },
+    {
+      "type": "text",
+      "id": "cta_1_label",
+      "default": "Voir la collection",
+      "label": "t:sections.batlle-hero.settings.cta_1_label.label"
+    },
+    {
+      "type": "text",
+      "id": "cta_1_link",
+      "default": "#batlle-collection",
+      "label": "t:sections.batlle-hero.settings.cta_1_link.label"
+    },
+    {
+      "type": "text",
+      "id": "cta_2_label",
+      "default": "Découvrir l'e-shop",
+      "label": "t:sections.batlle-hero.settings.cta_2_label.label"
+    },
+    {
+      "type": "text",
+      "id": "cta_2_link",
+      "default": "#batlle-eshop",
+      "label": "t:sections.batlle-hero.settings.cta_2_link.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-hero.presets.name"
+    }
+  ]
+}
+{% endschema %}
