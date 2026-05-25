@@ -100,6 +100,7 @@
     },
     "eshop_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "pieces-a-porter",
         "products_to_show": 8,
@@ -168,6 +169,7 @@
         "step3",
         "step4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "supertitle": "Le geste · L'atelier",
@@ -186,18 +188,53 @@
         "mat_3_value": "Baleinage main"
       }
     },
+    "collection_list_wLNpCQ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_jG3gHb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pieces-a-porter"
+          }
+        },
+        "featured_collection_9NKcYg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "patrons"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_jG3gHb",
+        "featured_collection_9NKcYg"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_tJFnR3": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "patrons",
-        "products_to_show": 4,
+        "products_to_show": 2,
         "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
+        "columns_desktop": 1,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
@@ -303,6 +340,7 @@
     "batlle_collection",
     "eshop_collection",
     "savoir_faire",
+    "collection_list_wLNpCQ",
     "featured_collection_tJFnR3",
     "biography",
     "presse",
