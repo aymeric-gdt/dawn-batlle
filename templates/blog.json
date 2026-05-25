@@ -20,21 +20,9 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "batlle_contact_zRnWUY": {
-      "type": "batlle-contact",
-      "name": "t:sections.batlle-contact.presets.name",
-      "settings": {
-        "supertitle": "Prendre rendez-vous",
-        "title": "<p>Une pièce <em>unique</em> commence par <em>une rencontre.</em></p>",
-        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi — chaque projet commence par une conversation.</p>",
-        "email": "contact@batlle.fr",
-        "color_scheme": ""
-      }
     }
   },
   "order": [
-    "main",
-    "batlle_contact_zRnWUY"
+    "main"
   ]
 }

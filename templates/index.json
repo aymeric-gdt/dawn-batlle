@@ -84,7 +84,7 @@
       "settings": {
         "collection": "pieces-a-porter",
         "products_to_show": 8,
-        "title": "Les pièces",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -103,8 +103,8 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "savoir_faire": {
@@ -173,7 +173,7 @@
       "settings": {
         "collection": "patrons",
         "products_to_show": 4,
-        "title": "Les patrons",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -192,14 +192,14 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 72,
+        "padding_bottom": 0
       }
     },
     "biography": {
       "type": "batlle-biography",
       "settings": {
-        "portrait": "shopify://shop_images/PXL_20260425_100907146.jpg",
+        "portrait": "shopify://shop_images/Firefly.jpg",
         "name_badge": "Louise",
         "supertitle": "La créatrice · Parcours",
         "title": "<p>Louise, <em>violoniste</em> et couturière.</p>",
