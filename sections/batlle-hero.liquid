@@ -1,8 +1,9 @@
 <style>
   .batlle-hero {
-    position: relative;
-    padding-top: calc(var(--header-height, 90px) + 3rem);
-    padding-bottom: 5rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--header-height, 90px) + 1rem);
     overflow: hidden;
   }
 
@@ -11,6 +12,8 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
   }
 
   @media screen and (min-width: 990px) {
