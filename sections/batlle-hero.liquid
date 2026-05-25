@@ -11,7 +11,7 @@
   .batlle-hero__grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 4.5rem;
     align-items: center;
     padding-top: 0;
     padding-bottom: 3rem;
@@ -21,7 +21,7 @@
   @media screen and (min-width: 990px) {
     .batlle-hero__grid {
       flex-wrap: nowrap;
-      gap: 4rem;
+      gap: 6rem;
     }
   }
 
@@ -33,21 +33,21 @@
 
   .batlle-hero__visual {
     flex: 0 0 auto;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 
   .batlle-hero__supertitle {
     font-family: var(--font-body-family);
-    font-size: 1.05rem;
+    font-size: 1.55rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 0.5);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.25rem;
   }
 
   .batlle-hero__title {
     font-family: var(--font-heading-family);
-    font-size: clamp(4rem, 10vw, 9rem);
+    font-size: clamp(6rem, 15vw, 13.5rem);
     line-height: 0.9;
     letter-spacing: 0.04em;
     font-weight: var(--font-heading-weight);
@@ -57,38 +57,38 @@
 
   .batlle-hero__subtitle {
     font-family: var(--font-heading-family);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(3rem, 7.5vw, 5.25rem);
     font-weight: var(--font-heading-weight);
     line-height: 1;
     font-style: italic;
-    margin: 0.5rem 0 1.5rem;
+    margin: 0.75rem 0 2.25rem;
     color: rgb(var(--color-foreground));
   }
 
   .batlle-hero__description {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     line-height: 1.7;
     color: rgba(var(--color-foreground), 0.7);
-    max-width: 32rem;
-    margin-bottom: 2.5rem;
+    max-width: 48rem;
+    margin-bottom: 3.75rem;
   }
 
   .batlle-hero__ctas {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.25rem;
   }
 
   .batlle-hero__cta-primary {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.1rem;
     background: rgb(var(--color-foreground));
     color: rgb(var(--color-background));
-    padding: 1.2rem 2.4rem;
+    padding: 1.8rem 3.6rem;
     font-family: var(--font-body-family);
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
@@ -109,13 +109,13 @@
 
   .batlle-hero__cta-secondary {
     font-family: var(--font-body-family);
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgb(var(--color-foreground));
     text-decoration: none;
     border-bottom: 1px solid rgba(var(--color-foreground), 0.4);
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.45rem;
     transition: border-color 0.3s ease;
   }
 
@@ -130,9 +130,9 @@
   .batlle-hero__image-wrapper {
     position: relative;
     aspect-ratio: 4 / 5;
-    max-width: 28rem;
+    max-width: 42rem;
     margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
   }
 
   @media screen and (min-width: 990px) {
@@ -149,52 +149,52 @@
 
   .batlle-hero__overlay-card {
     position: absolute;
-    bottom: -1.5rem;
-    left: -1.5rem;
+    bottom: -2.25rem;
+    left: -2.25rem;
     background: rgb(var(--color-background));
     border: 1px solid rgba(var(--color-foreground), 0.15);
-    padding: 1rem 1.5rem;
-    max-width: 14rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 2.25rem;
+    max-width: 21rem;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.04);
   }
 
   @media screen and (min-width: 990px) {
     .batlle-hero__overlay-card {
-      left: -3rem;
+      left: -4.5rem;
     }
   }
 
   .batlle-hero__overlay-number {
     font-family: var(--font-body-family);
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 0.5);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.45rem;
   }
 
   .batlle-hero__overlay-name {
     font-family: var(--font-heading-family);
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 1.15;
     color: rgb(var(--color-foreground));
     margin: 0;
   }
 
   .batlle-hero__overlay-materials {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: rgba(var(--color-foreground), 0.6);
     font-style: italic;
-    margin-top: 0.3rem;
+    margin-top: 0.45rem;
   }
 
   .batlle-hero__scroll-hint {
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-body-family);
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 0.4);
@@ -208,16 +208,16 @@
 
   @media screen and (max-width: 749px) {
     .batlle-hero__overlay-card {
-      bottom: -1rem;
-      left: -0.5rem;
-      max-width: 12rem;
-      padding: 0.8rem 1.2rem;
+      bottom: -1.5rem;
+      left: -0.75rem;
+      max-width: 18rem;
+      padding: 1.2rem 1.8rem;
     }
     .batlle-hero__overlay-name {
-      font-size: 1.6rem;
+      font-size: 2.4rem;
     }
     .batlle-hero__description {
-      font-size: 1.4rem;
+      font-size: 2.1rem;
       max-width: 100%;
     }
   }
