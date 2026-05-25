@@ -114,6 +114,12 @@
   .header__instagram-handle {
     font-family: var(--font-body-family);
   }
+
+  @media screen and (max-width: 989px) {
+    .header__instagram-link {
+      display: none;
+    }
+  }
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
