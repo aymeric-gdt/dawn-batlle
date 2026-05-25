@@ -219,7 +219,7 @@
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "La boutique",
-        "heading_size": "hxxl",
+        "heading_size": "h0",
         "image_ratio": "portrait",
         "columns_desktop": 2,
         "color_scheme": "",
