@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "video_9UiyTi": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/CollectionClaraSchumannPrintempsEte2026_1_cropped.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "hero": {
       "type": "batlle-hero",
       "settings": {
@@ -279,6 +295,7 @@
     }
   },
   "order": [
+    "video_9UiyTi",
     "hero",
     "batlle_collection",
     "eshop_collection",
