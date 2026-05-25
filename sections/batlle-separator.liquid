@@ -13,7 +13,7 @@
 
   .batlle-separator__line {
     border: none;
-    border-top: {{ section.settings.line_width }}px solid rgba(var(--color-foreground), 0.15);
+    border-top: {{ section.settings.line_width }}px solid rgba(var(--color-foreground), {{ section.settings.line_opacity | times: 0.01 }});
     width: {{ section.settings.line_length }}%;
     margin: 0 auto;
   }
@@ -72,6 +72,16 @@
       "unit": "%",
       "label": "Longueur du trait",
       "default": 85
+    },
+    {
+      "type": "range",
+      "id": "line_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Opacité du trait",
+      "default": 15
     },
     {
       "type": "color_scheme",
