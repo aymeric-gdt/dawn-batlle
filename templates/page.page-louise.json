@@ -26,7 +26,11 @@
         "supertitle": "La créatrice · Parcours",
         "title": "<p>Louise, <em>violoniste</em><br/>et couturière.</p>",
         "body": "<p>Née à Toulouse, je grandis entre les cordes du violon et les chutes de tissu. Très tôt, la musique et la couture me semblent répondre à la même exigence : la précision du geste au service de l'émotion.</p><p>Je me forme à l'<strong>Institut Français de la Mode</strong> puis à l'<strong>AICP</strong> — deux écoles réputées pour leur technicité et leur approche radicale de la coupe. J'y apprends le flou, le tailleur et le corset, les trois langues de la couture.</p><p>Avec Batlle, je réinterprète les histoires anciennes — chevaleresses, sorcières, mystiques, héroïnes oubliées — pour habiller les femmes d'aujourd'hui.</p>",
-        "color_scheme": ""
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 56,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 16
       }
     },
     "batlle_savoir_faire_UkPMmF": {
@@ -74,6 +78,10 @@
       "name": "t:sections.batlle-savoir-faire.presets.name",
       "settings": {
         "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "supertitle": "Le geste · L'atelier",
         "title": "<p>Modéliste <em>avant tout.</em></p>",
         "intro": "<p>Formée à l'Institut Français de la Mode et à l'AICP, je travaille le vêtement comme une sculpture vivante. Le moulage, le drapé et la coupe sont au cœur de chaque création.</p>",
