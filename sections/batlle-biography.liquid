@@ -130,10 +130,99 @@
     color: rgb(var(--color-foreground));
   }
 
+  /* Phone ≤749px */
   @media screen and (max-width: 749px) {
+    .batlle-biography {
+      padding: 5rem 0;
+    }
+
+    .batlle-biography__layout {
+      gap: 3rem;
+    }
+
+    .batlle-biography__frame {
+      max-width: 16rem;
+    }
+
+    .batlle-biography__frame-border {
+      inset: -0.75rem;
+    }
+
+    .batlle-biography__name-badge {
+      bottom: -1rem;
+      right: -1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1.5rem;
+    }
+
+    .batlle-biography__supertitle {
+      font-size: 0.95rem;
+    }
+
+    .batlle-biography__title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .batlle-biography__body {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
     .batlle-biography__skills {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      padding-top: 1.5rem;
+    }
+
+    .batlle-biography__skill-label {
+      font-size: 0.85rem;
+    }
+
+    .batlle-biography__skill-value {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* Tablet 750–989px */
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .batlle-biography {
+      padding: 6rem 0;
+    }
+
+    .batlle-biography__layout {
+      grid-template-columns: 6fr 6fr;
+      gap: 3rem;
+    }
+
+    .batlle-biography__frame {
+      max-width: 18rem;
+    }
+
+    .batlle-biography__name-badge {
+      font-size: 1.7rem;
+      padding: 0.7rem 1.3rem;
+      bottom: -1rem;
+      right: -1rem;
+    }
+
+    .batlle-biography__title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .batlle-biography__body {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .batlle-biography__skills {
       gap: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    .batlle-biography__skill-value {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
     }
   }
 </style>
