@@ -32,13 +32,13 @@
 
   .batlle-biography__frame {
     position: relative;
-    max-width: 20rem;
+    max-width: 30rem;
     margin: 0 auto;
   }
 
   .batlle-biography__frame-border {
     position: absolute;
-    inset: -1rem;
+    inset: -1.5rem;
     border: 1px solid rgba(var(--color-foreground), 0.4);
     pointer-events: none;
   }
@@ -58,13 +58,13 @@
 
   .batlle-biography__name-badge {
     position: absolute;
-    bottom: -1.25rem;
-    right: -1.25rem;
+    bottom: -1.875rem;
+    right: -1.875rem;
     background: rgb(var(--color-foreground));
     color: rgb(var(--color-background));
-    padding: 0.8rem 1.5rem;
+    padding: 1.2rem 2.25rem;
     font-family: var(--font-heading-family);
-    font-size: 2rem;
+    font-size: 3rem;
     font-style: italic;
   }
 
@@ -106,29 +106,6 @@
     margin-bottom: 0;
   }
 
-  .batlle-biography__skills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(var(--color-foreground), 0.15);
-    max-width: 32rem;
-  }
-
-  .batlle-biography__skill-label {
-    font-family: var(--font-body-family);
-    font-size: 0.95rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(var(--color-foreground), 0.5);
-    margin-bottom: 0.5rem;
-  }
-
-  .batlle-biography__skill-value {
-    font-family: var(--font-heading-family);
-    font-size: clamp(1.6rem, 2.5vw, 2rem);
-    color: rgb(var(--color-foreground));
-  }
 
   /* Phone ≤749px */
   @media screen and (max-width: 749px) {
@@ -169,21 +146,6 @@
       margin-bottom: 2rem;
     }
 
-    .batlle-biography__skills {
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      padding-top: 1.5rem;
-      max-width: 100%;
-    }
-
-    .batlle-biography__skill-label {
-      font-size: 0.85rem;
-    }
-
-    .batlle-biography__skill-value {
-      font-size: 1.4rem;
-      text-align: right;
-    }
   }
 
   /* Tablet 750–989px */
@@ -198,14 +160,14 @@
     }
 
     .batlle-biography__frame {
-      max-width: 18rem;
+      max-width: 27rem;
     }
 
     .batlle-biography__name-badge {
-      font-size: 1.7rem;
-      padding: 0.7rem 1.3rem;
-      bottom: -1rem;
-      right: -1rem;
+      font-size: 2.55rem;
+      padding: 1.05rem 1.95rem;
+      bottom: -1.5rem;
+      right: -1.5rem;
     }
 
     .batlle-biography__title {
@@ -218,14 +180,6 @@
       margin-bottom: 2rem;
     }
 
-    .batlle-biography__skills {
-      gap: 1.5rem;
-      padding-top: 2rem;
-    }
-
-    .batlle-biography__skill-value {
-      font-size: clamp(1.4rem, 2vw, 1.8rem);
-    }
   }
 </style>
 
@@ -269,29 +223,6 @@
           <div class="batlle-biography__body">
             {{ section.settings.body }}
           </div>
-        {%- endif -%}
-
-        {%- if section.settings.skill_1_value != blank or section.settings.skill_2_value != blank or section.settings.skill_3_value != blank -%}
-          <dl class="batlle-biography__skills">
-            {%- if section.settings.skill_1_value != blank -%}
-              <div>
-                <dt class="batlle-biography__skill-label">{{ section.settings.skill_1_label }}</dt>
-                <dd class="batlle-biography__skill-value">{{ section.settings.skill_1_value }}</dd>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.skill_2_value != blank -%}
-              <div>
-                <dt class="batlle-biography__skill-label">{{ section.settings.skill_2_label }}</dt>
-                <dd class="batlle-biography__skill-value">{{ section.settings.skill_2_value }}</dd>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.skill_3_value != blank -%}
-              <div>
-                <dt class="batlle-biography__skill-label">{{ section.settings.skill_3_label }}</dt>
-                <dd class="batlle-biography__skill-value">{{ section.settings.skill_3_value }}</dd>
-              </div>
-            {%- endif -%}
-          </dl>
         {%- endif -%}
       </div>
     </div>
