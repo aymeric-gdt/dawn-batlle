@@ -212,6 +212,155 @@
     font-size: clamp(1.6rem, 2.5vw, 2rem);
     color: rgb(var(--color-background));
   }
+
+  /* Phone ≤749px */
+  @media screen and (max-width: 749px) {
+    .batlle-savoir-faire__main {
+      padding: 5rem 0;
+    }
+
+    .batlle-savoir-faire__layout {
+      gap: 3rem;
+    }
+
+    .batlle-savoir-faire__supertitle {
+      font-size: 0.95rem;
+    }
+
+    .batlle-savoir-faire__title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .batlle-savoir-faire__intro {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .batlle-process__step {
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+    }
+
+    .batlle-process__number {
+      font-size: clamp(2rem, 8vw, 3rem);
+      width: 3rem;
+    }
+
+    .batlle-process__step-title {
+      font-size: 1.6rem;
+    }
+
+    .batlle-process__step-body {
+      font-size: 1.2rem;
+    }
+
+    .batlle-process__arrow {
+      display: none;
+    }
+
+    /* Moulage mobile */
+    .batlle-moulage {
+      padding: 5rem 0;
+    }
+
+    .batlle-moulage__layout {
+      gap: 3rem;
+    }
+
+    .batlle-moulage__supertitle {
+      font-size: 0.95rem;
+    }
+
+    .batlle-moulage__title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .batlle-moulage__body {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .batlle-moulage__materials {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding-top: 1.5rem;
+    }
+
+    .batlle-moulage__material-label {
+      font-size: 0.85rem;
+    }
+
+    .batlle-moulage__material-value {
+      font-size: 1.4rem;
+      text-align: right;
+    }
+  }
+
+  /* Tablet 750–989px */
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .batlle-savoir-faire__main {
+      padding: 6rem 0;
+    }
+
+    .batlle-savoir-faire__layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .batlle-savoir-faire__title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .batlle-savoir-faire__intro {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .batlle-process__number {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      width: 4rem;
+    }
+
+    .batlle-process__step-title {
+      font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    }
+
+    .batlle-process__step-body {
+      font-size: 1.3rem;
+    }
+
+    /* Moulage tablet */
+    .batlle-moulage {
+      padding: 6rem 0;
+    }
+
+    .batlle-moulage__layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .batlle-moulage__title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .batlle-moulage__body {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .batlle-moulage__materials {
+      gap: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    .batlle-moulage__material-value {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+  }
 </style>
 
 <div class="batlle-savoir-faire color-{{ section.settings.color_scheme }} gradient" id="batlle-savoir-faire">
