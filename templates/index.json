@@ -199,12 +199,6 @@
     "collection_list_wLNpCQ": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_3fCkDc": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "cours"
-          }
-        },
         "featured_collection_jG3gHb": {
           "type": "featured_collection",
           "settings": {
@@ -216,12 +210,18 @@
           "settings": {
             "collection": "patrons"
           }
+        },
+        "featured_collection_3fCkDc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cours"
+          }
         }
       },
       "block_order": [
-        "featured_collection_3fCkDc",
         "featured_collection_jG3gHb",
-        "featured_collection_9NKcYg"
+        "featured_collection_9NKcYg",
+        "featured_collection_3fCkDc"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
