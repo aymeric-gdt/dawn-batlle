@@ -364,6 +364,69 @@
 </style>
 
 <div class="batlle-savoir-faire color-{{ section.settings.color_scheme }} gradient" id="batlle-savoir-faire">
+  <div class="batlle-moulage">
+    <div class="page-width">
+      <div class="batlle-moulage__layout">
+        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
+          <div class="batlle-moulage__image">
+            {%- if section.settings.moulage_image != blank -%}
+              {%- assign img_h = section.settings.moulage_image.width | divided_by: section.settings.moulage_image.aspect_ratio -%}
+              {{
+                section.settings.moulage_image
+                | image_url: width: 900
+                | image_tag:
+                  width: section.settings.moulage_image.width,
+                  height: img_h,
+                  sizes: '(min-width: 990px) 60vw, 100vw',
+                  widths: '375, 550, 750, 900',
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
+          {%- if section.settings.moulage_supertitle != blank -%}
+            <p class="batlle-moulage__supertitle">{{ section.settings.moulage_supertitle }}</p>
+          {%- endif -%}
+          {%- if section.settings.moulage_title != blank -%}
+            <h2 class="batlle-moulage__title">{{ section.settings.moulage_title }}</h2>
+          {%- endif -%}
+          {%- if section.settings.moulage_body != blank -%}
+            <div class="batlle-moulage__body">
+              {{ section.settings.moulage_body }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mat_1_value != blank or section.settings.mat_2_value != blank or section.settings.mat_3_value != blank -%}
+            <dl class="batlle-moulage__materials">
+              {%- if section.settings.mat_1_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_1_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_1_value }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.mat_2_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_2_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_2_value }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.mat_3_value != blank -%}
+                <div>
+                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_3_label }}</dt>
+                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_3_value }}</dd>
+                </div>
+              {%- endif -%}
+            </dl>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="batlle-savoir-faire__main">
     <div class="page-width">
       <div class="batlle-savoir-faire__layout">
@@ -423,69 +486,6 @@
               {%- endif -%}
             {%- endfor -%}
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="batlle-moulage">
-    <div class="page-width">
-      <div class="batlle-moulage__layout">
-        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
-          <div class="batlle-moulage__image">
-            {%- if section.settings.moulage_image != blank -%}
-              {%- assign img_h = section.settings.moulage_image.width | divided_by: section.settings.moulage_image.aspect_ratio -%}
-              {{
-                section.settings.moulage_image
-                | image_url: width: 900
-                | image_tag:
-                  width: section.settings.moulage_image.width,
-                  height: img_h,
-                  sizes: '(min-width: 990px) 60vw, 100vw',
-                  widths: '375, 550, 750, 900',
-                  loading: 'lazy'
-              }}
-            {%- else -%}
-              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
-          </div>
-        </div>
-
-        <div{% if settings.animations_reveal_on_scroll %} class="scroll-trigger animate--slide-in"{% endif %}>
-          {%- if section.settings.moulage_supertitle != blank -%}
-            <p class="batlle-moulage__supertitle">{{ section.settings.moulage_supertitle }}</p>
-          {%- endif -%}
-          {%- if section.settings.moulage_title != blank -%}
-            <h2 class="batlle-moulage__title">{{ section.settings.moulage_title }}</h2>
-          {%- endif -%}
-          {%- if section.settings.moulage_body != blank -%}
-            <div class="batlle-moulage__body">
-              {{ section.settings.moulage_body }}
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.mat_1_value != blank or section.settings.mat_2_value != blank or section.settings.mat_3_value != blank -%}
-            <dl class="batlle-moulage__materials">
-              {%- if section.settings.mat_1_value != blank -%}
-                <div>
-                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_1_label }}</dt>
-                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_1_value }}</dd>
-                </div>
-              {%- endif -%}
-              {%- if section.settings.mat_2_value != blank -%}
-                <div>
-                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_2_label }}</dt>
-                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_2_value }}</dd>
-                </div>
-              {%- endif -%}
-              {%- if section.settings.mat_3_value != blank -%}
-                <div>
-                  <dt class="batlle-moulage__material-label">{{ section.settings.mat_3_label }}</dt>
-                  <dd class="batlle-moulage__material-value">{{ section.settings.mat_3_value }}</dd>
-                </div>
-              {%- endif -%}
-            </dl>
-          {%- endif -%}
         </div>
       </div>
     </div>
