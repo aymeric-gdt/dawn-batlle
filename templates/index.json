@@ -199,6 +199,12 @@
     "collection_list_wLNpCQ": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_3fCkDc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cours"
+          }
+        },
         "featured_collection_jG3gHb": {
           "type": "featured_collection",
           "settings": {
@@ -213,6 +219,7 @@
         }
       },
       "block_order": [
+        "featured_collection_3fCkDc",
         "featured_collection_jG3gHb",
         "featured_collection_9NKcYg"
       ],
@@ -220,8 +227,8 @@
       "settings": {
         "title": "La boutique",
         "heading_size": "h0",
-        "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "image_ratio": "square",
+        "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",
