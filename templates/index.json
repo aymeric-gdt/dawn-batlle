@@ -31,14 +31,14 @@
     "hero": {
       "type": "batlle-hero",
       "settings": {
-        "supertitle": "Maison Batlle · Paris · Édition 01",
+        "supertitle": "Maison Batlle · Paris",
         "title": "BATLLE",
         "subtitle": "l'armure d'une femme.",
         "description": "<p>Pièces sur-mesure inspirées des chevaleresses, des sorcières et des figures puissantes de l'histoire. Confection main à Paris.</p>",
         "hero_image": "shopify://shop_images/IMG_1437.jpg",
         "overlay_piece_number": "Pièce N° 01",
-        "overlay_piece_title": "L'Armure de Jeanne",
-        "overlay_piece_materials": "Cuir, Tissus, Metal",
+        "overlay_piece_title": "La veste chevaleresse",
+        "overlay_piece_materials": "Denim et cuir",
         "cta_1_label": "Voir la collection",
         "cta_1_link": "#batlle-collection",
         "cta_2_label": "Découvrir l'e-shop",
@@ -59,8 +59,8 @@
             "image": "shopify://shop_images/81809520-38C1-4B25-A979-B9447E083FE2.jpg",
             "figure_tag": "Fig. 01",
             "category": "Flou",
-            "title": "Robe bénitier",
-            "description": "<p>Robe longue et élégante à double col bénitier — à l'avant comme au dos. Réalisation sur-mesure.</p>",
+            "title": "Robe \"The mystical woman\"",
+            "description": "<p>Robe longue drapée à bustier baleiné Réalisation sur-mesure.</p>",
             "link": ""
           }
         },
@@ -70,8 +70,8 @@
             "image": "shopify://shop_images/IMG_6026.jpg",
             "figure_tag": "Fig. 02",
             "category": "Flou",
-            "title": "Chemise Brunehaut",
-            "description": "<p>Chemise oversize à manches gigot architecturées. Coton de chemiserie italien. Popeline de coton.</p>",
+            "title": "Robe \"Clara Schumann\"",
+            "description": "<p>Robe mi-cuisse froncée à la taille avec col et drapé asymétrique. Réalisation sur-mesure.</p>",
             "link": ""
           }
         },
@@ -80,9 +80,9 @@
           "settings": {
             "image": "shopify://shop_images/5C6485E2-67E1-423A-84C4-1C175E7E75F1.jpg",
             "figure_tag": "Fig. 03",
-            "category": "Tailleur",
-            "title": "Tailleur Hildegarde",
-            "description": "<p>Ensemble gilet long et pantalon ajusté. Allure dandy contemporaine. Laine froide noire.</p>",
+            "category": "Corset",
+            "title": "Corset \"Frida\"",
+            "description": "<p>Corset baleiné réalisé en dans un tissu brodé de rami, fibre naturelle. Réalisation sur-mesure.</p>",
             "link": ""
           }
         }
@@ -95,7 +95,7 @@
       "settings": {
         "supertitle": "La collection · Figures",
         "title": "Chaque femme mérite <em>son armure.</em>",
-        "quote": "Six identités, un même geste : sculpter le tissu pour révéler la puissance de celle qui le porte.",
+        "quote": "Sculpter le tissu pour révéler la puissance de celle qui le porte.",
         "footer_text": "<p>Une silhouette vous parle ? <em>Imaginons la vôtre.</em></p>",
         "footer_cta_label": "Demander une pièce sur-mesure",
         "footer_cta_link": "#batlle-contact",
@@ -348,7 +348,7 @@
       "settings": {
         "supertitle": "Prendre rendez-vous",
         "title": "<p>Une pièce <em>unique</em> commence par <em>une rencontre.</em></p>",
-        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi — chaque projet commence par une conversation.</p>",
+        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi. Chaque projet commence par une conversation.</p>",
         "email": "contact@batlle.fr",
         "color_scheme": "scheme-1"
       }
