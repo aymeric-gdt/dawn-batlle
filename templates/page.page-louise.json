@@ -41,7 +41,7 @@
           "settings": {
             "number": "01",
             "title": "Croquis",
-            "body": "<p>L'idée naît à l'encre, sur papier kraft. Une silhouette se dessine, un détail s'invente — souvent puisé dans une figure historique ou mythologique.</p>"
+            "body": "<p>L'idée naît par collage, sur mon Ipad. Une silhouette se dessine, un détail s'invente — souvent puisé dans une figure historique ou mythologique.</p>"
           }
         },
         "step_cidV6B": {
@@ -65,7 +65,7 @@
           "settings": {
             "number": "04",
             "title": "Confection main · Paris",
-            "body": "<p>Chaque pièce est entièrement assemblée à la main dans mon atelier parisien. Coutures invisibles, finitions au point d'esprit, baleinage spiralé pour les corsets.</p>"
+            "body": "<p>Chaque pièce est entièrement coupée et assemblée à la main dans mon atelier parisien. Coutures soignées, finitions au point d'esprit, baleinage spiralé pour les corsets.</p>"
           }
         }
       },
@@ -88,7 +88,7 @@
         "process_image": "shopify://shop_images/IMG_6396.jpg",
         "moulage_supertitle": "Processus créatif · Moulage",
         "moulage_title": "<p>Le moulage, <em>la pensée du tissu.</em></p>",
-        "moulage_body": "<p>Chaque création commence sur le mannequin. Je travaille la toile brute en la sculptant directement, jusqu'à ce que la forme raconte quelque chose.</p><p>Cette technique ancestrale, héritée de la haute couture parisienne, permet une liberté totale : la pièce naît du geste, non du dessin.</p>",
+        "moulage_body": "<p>Chaque création commence sur le mannequin. Je travaille la toile en la sculptant directement, jusqu'à ce que la forme raconte quelque chose.</p><p>Cette technique du moulage, héritée de la haute couture parisienne, permet une liberté totale : la pièce naît du geste, non du dessin.</p>",
         "moulage_image": "shopify://shop_images/IMG_3210.jpg",
         "mat_1_label": "Flou",
         "mat_1_value": "Soie · Mousseline",
