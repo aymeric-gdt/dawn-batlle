@@ -348,8 +348,8 @@
       "settings": {
         "supertitle": "Prendre rendez-vous",
         "title": "<p>Une pièce <em>unique</em> commence par <em>une rencontre.</em></p>",
-        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi. Chaque projet commence par une conversation.</p>",
-        "email": "contact@batlle.fr",
+        "body": "<p>Je travaille en freelance depuis mon atelier personnel, à Paris. Pour une commande sur-mesure, une collaboration ou un échange, écrivez-moi. </p>",
+        "email": "contact@batlle.paris",
         "color_scheme": "scheme-1"
       }
     }
