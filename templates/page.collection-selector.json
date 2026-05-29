@@ -31,18 +31,25 @@
           "settings": {
             "collection": "patrons"
           }
+        },
+        "featured_collection_fM87tc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cours"
+          }
         }
       },
       "block_order": [
         "featured_collection_WPQn7T",
-        "featured_collection_mgcddJ"
+        "featured_collection_mgcddJ",
+        "featured_collection_fM87tc"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "La boutique",
         "heading_size": "hxxl",
-        "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "image_ratio": "square",
+        "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",
