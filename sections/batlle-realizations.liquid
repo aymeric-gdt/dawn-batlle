@@ -1,0 +1,352 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .batlle-realizations {
+    position: relative;
+  }
+
+  .batlle-realizations__header {
+    margin-bottom: 5rem;
+  }
+
+  .batlle-realizations__supertitle {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .batlle-realizations__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: var(--font-heading-weight);
+    margin: 0 0 1.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-realizations__title em {
+    font-weight: var(--font-heading-weight);
+  }
+
+  .batlle-realizations__intro {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.65);
+    max-width: 36rem;
+  }
+
+  .batlle-realizations__intro p {
+    margin: 0;
+  }
+
+  .batlle-realizations__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    row-gap: 5rem;
+  }
+
+  .batlle-article-card {
+    position: relative;
+  }
+
+  .batlle-article-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(var(--color-foreground), 0.12);
+    transition: border-color 0.4s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-article-card:hover .batlle-article-card__image-wrapper {
+    border-color: rgba(var(--color-foreground), 0.4);
+  }
+
+  .batlle-article-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.6s cubic-bezier(0.16, 1, 0.32, 1), transform 0.6s cubic-bezier(0.16, 1, 0.32, 1);
+  }
+
+  .batlle-article-card:hover .batlle-article-card__image {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+  }
+
+  .batlle-article-card__date {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.4);
+    margin-bottom: 0.75rem;
+  }
+
+  .batlle-article-card__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    line-height: 1.15;
+    font-weight: var(--font-heading-weight);
+    margin: 0;
+    color: rgb(var(--color-foreground));
+  }
+
+  .batlle-article-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .batlle-article-card__link:hover .batlle-article-card__title {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+  }
+
+  .batlle-realizations__pagination {
+    margin-top: 5rem;
+  }
+
+  /* Phone */
+  @media screen and (max-width: 749px) {
+    .batlle-realizations__header {
+      margin-bottom: 3rem;
+    }
+
+    .batlle-realizations__supertitle {
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .batlle-realizations__title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      text-align: center;
+    }
+
+    .batlle-realizations__intro {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .batlle-realizations__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      row-gap: 4rem;
+    }
+
+    .batlle-article-card__image-wrapper {
+      aspect-ratio: 2 / 3;
+    }
+
+    .batlle-article-card__title {
+      font-size: 1.6rem;
+    }
+  }
+
+  /* Tablet */
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .batlle-realizations__header {
+      margin-bottom: 4rem;
+    }
+
+    .batlle-realizations__title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+    }
+
+    .batlle-realizations__intro {
+      font-size: 1.4rem;
+    }
+
+    .batlle-realizations__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      row-gap: 4rem;
+    }
+
+    .batlle-article-card__title {
+      font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    }
+  }
+</style>
+
+<div class="batlle-realizations color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+
+    {%- if section.settings.supertitle != blank or section.settings.title != blank -%}
+      <div class="batlle-realizations__header">
+        {%- if section.settings.supertitle != blank -%}
+          <p class="batlle-realizations__supertitle">{{ section.settings.supertitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h1 class="batlle-realizations__title">{{ section.settings.title }}</h1>
+        {%- endif -%}
+        {%- if section.settings.intro != blank -%}
+          <div class="batlle-realizations__intro">
+            {{ section.settings.intro }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- paginate blog.articles by 6 -%}
+      <div class="batlle-realizations__grid">
+        {%- for article in blog.articles -%}
+          <div class="batlle-article-card" style="--animation-order: {{ forloop.index }};">
+            <a href="{{ article.url }}" class="batlle-article-card__link">
+              <div class="batlle-article-card__image-wrapper">
+                {%- if article.image -%}
+                  {{ article.image | image_url: width: 600 | image_tag:
+                    class: 'batlle-article-card__image',
+                    widths: '300, 450, 600',
+                    sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw',
+                    loading: 'lazy',
+                    alt: article.image.alt | escape
+                  }}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg batlle-article-card__image' }}
+                {%- endif -%}
+              </div>
+
+              {%- if section.settings.show_date and article.published_at -%}
+                <p class="batlle-article-card__date">
+                  {{ article.published_at | date: '%d.%m.%Y' }}
+                </p>
+              {%- endif -%}
+
+              <h2 class="batlle-article-card__title">
+                {{ article.title | escape }}
+              </h2>
+            </a>
+          </div>
+        {%- else -%}
+          <p class="batlle-realizations__empty">
+            {{ 'sections.batlle-realizations.empty' | t }}
+          </p>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <div class="batlle-realizations__pagination">
+          {%- render 'pagination', paginate: paginate -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.batlle-realizations.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "supertitle",
+      "default": "Journal · Créations",
+      "label": "t:sections.batlle-realizations.settings.supertitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p><em>Réalisations</em></p>",
+      "label": "t:sections.batlle-realizations.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "default": "<p>Chaque pièce raconte une histoire. Découvrez les créations sur-mesure, les collaborations et les pièces uniques nées dans l'atelier parisien.</p>",
+      "label": "t:sections.batlle-realizations.settings.intro.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.batlle-realizations.settings.show_date.label"
+    },
+    {
+      "type": "header",
+      "content": "Remplissage"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Remplissage haut",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Remplissage bas",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Remplissage mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Remplissage haut mobile",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Remplissage bas mobile",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.batlle-realizations.presets.name"
+    }
+  ]
+}
+{% endschema %}

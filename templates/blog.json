@@ -1,24 +1,14 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
-      "type": "main-blog",
+      "type": "batlle-realizations",
       "settings": {
-        "layout": "grid",
-        "show_image": true,
-        "image_height": "medium",
+        "supertitle": "Journal · Créations",
+        "title": "<p><em>Réalisations</em></p>",
+        "intro": "<p>Chaque pièce raconte une histoire. Découvrez les créations sur-mesure, les collaborations et les pièces uniques nées dans l'atelier parisien.</p>",
         "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     }
   },

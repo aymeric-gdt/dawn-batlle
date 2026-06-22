@@ -328,6 +328,27 @@
       },
       "presets": { "name": "Press" }
     },
+    "batlle-realizations": {
+      "name": "Réalisations",
+      "empty": "No realizations yet.",
+      "settings": {
+        "supertitle": {
+          "label": "Supertitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "intro": {
+          "label": "Intro"
+        },
+        "show_date": {
+          "label": "Show date"
+        }
+      },
+      "presets": {
+        "name": "Réalisations"
+      }
+    },
     "batlle-contact": {
       "name": "Contact",
       "atelier": "Atelier",

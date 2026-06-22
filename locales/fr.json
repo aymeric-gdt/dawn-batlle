@@ -313,6 +313,27 @@
         "name": "Presse"
       }
     },
+    "batlle-realizations": {
+      "name": "Réalisations",
+      "empty": "Aucune réalisation pour le moment.",
+      "settings": {
+        "supertitle": {
+          "label": "Sur-titre"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "intro": {
+          "label": "Introduction"
+        },
+        "show_date": {
+          "label": "Afficher la date"
+        }
+      },
+      "presets": {
+        "name": "Réalisations"
+      }
+    },
     "batlle-contact": {
       "name": "Contact",
       "atelier": "Atelier",
